@@ -28,7 +28,7 @@ export function LoveLetterSection({
           {letter.title || 'A Letter For You'}
         </h2>
         <p className="text-anniv-secondary text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-          Sebuah surat kecil tentang 365 hari yang hangat bareng kamu. Pecahkan segel lilin merah marunnya untuk membaca isi surat.
+          Sebuah surat kecil tentang 4 tahun perjalanan hangat bareng kamu. Pecahkan segel lilin merah marunnya untuk membaca isi surat.
         </p>
       </div>
 

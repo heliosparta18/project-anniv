@@ -19,15 +19,15 @@ import type {
 export const coupleProfile: CoupleProfile = {
   partnerName: 'Alya',
   myName: 'Rama',
-  anniversaryDate: '2025-05-04T00:00:00', // Start of relationship
-  tagline: '365 Days of Loving You',
-  subtagline: 'Still my favorite person to do absolutely nothing with. Happy 1st anniversary, sayang.',
+  anniversaryDate: '2022-11-10T00:00:00', // Start of relationship: 10 November 2022 (4 Years)
+  tagline: '4 Years of Loving You',
+  subtagline: '1,460+ hari bersama, dan kamu masih jadi orang favoritku setiap hari. Happy 4th anniversary, sayang.',
 };
 
 export const milestones: Milestone[] = [
   {
     id: 'milestone-1',
-    date: '14 Februari 2025',
+    date: '18 September 2022',
     title: 'Pertama Kali Ketemu (Dan Aku Nervous Parah)',
     description: "Masih inget banget waktu pertama kali ketemu di cafe itu. Aku pura-pura sibuk ngecek HP biar keliatan keren dan sok santai, padahal tangan udah dingin banget saking nervous-nya. Pas kamu akhirnya dateng dan senyum, rasanya mendadak tenang. Dari obrolan canggung 10 menit pertama sampai akhirnya gak kerasa ngobrol 3 jam penuh ketawa, that was the exact moment I thought: 'I really, really like this person.'",
     category: 'firsts',
@@ -36,7 +36,7 @@ export const milestones: Milestone[] = [
   },
   {
     id: 'milestone-2',
-    date: '28 Maret 2025',
+    date: '24 Oktober 2022',
     title: 'Midnight Talks & Random Mie Pinggir Jalan',
     description: 'Keliling jalanan kota yang udah mulai sepi tanpa tujuan yang jelas, muter playlist kesukaan kita di Spotify, terus gantian nyanyi dengan suara yang pas-pasan. Ujung-ujungnya jam 1 malem kita malah melipir makan mie kuah di pinggir jalan karena mendadak laper. Gak ada yang mewah, tapi malam itu beneran bikin aku sadar kalau bahagia itu sesederhana ada di samping kamu.',
     category: 'memories',
@@ -45,16 +45,16 @@ export const milestones: Milestone[] = [
   },
   {
     id: 'milestone-3',
-    date: '04 Mei 2025',
-    title: 'Resmi Jadi Pasangan (Best Decision Ever)',
-    description: 'Hari paling mendebarkan tapi juga hari paling bahagia dalam hidup aku. Rasanya detak jantung udah kayak drum solo pas mau ngomong. Dan waktu kamu senyum sambil ngangguk pelan, rasanya kayak dapet hadiah paling berharga di dunia. Menjadi pasangan kamu adalah hal terbaik yang pernah terjadi di hidup aku.',
+    date: '10 November 2022',
+    title: 'Resmi Jadian (Best Decision Ever)',
+    description: 'Hari paling mendebarkan tapi juga hari paling bahagia dalam hidup aku. Rasanya detak jantung udah kayak drum solo pas mau ngomong. Dan waktu kamu senyum sambil ngangguk pelan, rasanya kayak dapet hadiah paling berharga di dunia. Menjadi pasangan kamu sejak 10 November 2022 adalah hal terbaik yang pernah terjadi di hidup aku.',
     category: 'milestones',
     location: 'Rooftop Garden Cafe, Jakarta',
     image: '/photos/milestone-3.svg',
   },
   {
     id: 'milestone-4',
-    date: '19 Agustus 2025',
+    date: '14 Juli 2024',
     title: 'Kehujanan Bareng & Ketawa Gak Jelas',
     description: 'Tiba-tiba hujan deras pas kita lagi jalan sore. Alih-alih bete, kita malah lari sambil ketawa-ketawa neduh di emperan ruko. Baju kita berdua basah kuyup, rambut kamu berantakan, tapi mata kamu binar-binar ceria banget. Momen kecil kayak gini yang selalu bikin aku sadar kalau bareng kamu, hari yang buruk pun bakal tetep kerasa manis.',
     category: 'trips',
@@ -63,9 +63,9 @@ export const milestones: Milestone[] = [
   },
   {
     id: 'milestone-5',
-    date: '04 Mei 2026',
-    title: 'Satu Tahun Penuh Cinta, Cerita, & Tawa',
-    description: '365 hari yang lewat cepet banget karena setiap harinya seru bareng kamu. Makasih udah jadi tempat pulang paling nyaman, partner makan paling klop, dan orang yang selalu bikin hari-hari biasa jadi luar biasa. 1 year down, and I still want you for all the years to come.',
+    date: '10 November 2026',
+    title: 'Empat Tahun Penuh Cinta, Cerita, & Tawa',
+    description: '4 tahun atau 1.460+ hari yang lewat dengan begitu banyak cerita seru bareng kamu. Makasih udah jadi tempat pulang paling nyaman, partner jalan paling klop, dan orang yang selalu bikin hari-hari biasa jadi luar biasa. 4 years down, and I still choose you, again and again.',
     category: 'milestones',
     location: 'Here With You 💕',
     image: '/photos/milestone-5.svg',
@@ -144,17 +144,17 @@ export const polaroids: PolaroidPhoto[] = [
 export const loveLetter: LoveLetter = {
   title: 'A Letter For You',
   salutation: 'To My Favorite Human in the Entire World,',
-  opening: 'Hai sayang, Happy 1st Anniversary ya!',
+  opening: 'Hai sayang, Happy 4th Anniversary ya!',
   paragraphs: [
     'Jujur, aku bukan tipe orang yang pinter ngerangkai kata-kata puitis kayak di novel romance. Tapi kalau ada satu hal yang aku tahu pasti dan berani aku jamin 100%, itu adalah betapa bersyukurnya aku punya kamu di hidup aku.',
     'Makasih ya udah selalu ada. Makasih udah selalu sabar ngadepin sifat aku yang kadang keras kepala atau suka lupa hal-hal sepele. Makasih udah selalu dengerin cerita-cerita random aku yang gak jelas ujungnya, udah selalu nemenin makan mie malem-malem pas lagi lapar, dan udah jadi tempat pulang yang paling tenang tiap kali dunia lagi kerasa berisik banget.',
     'Kamu itu bukan cuma pasangan buat aku. You are my best friend, my favorite gossip buddy, and the very first person I always want to text whenever something funny or exciting happens in my day.',
     'I genuinely love all your little quirks. Cara kamu nyanyi di mobil pas lagi happy, cara kamu ngambek tipis kalau telat makan, dan cara mata kamu berbinar-binar kalau ngeliat makanan manis favorit kamu. Life just feels so much softer, warmer, and full of color when you are around.',
-    "365 hari ini seru banget, and I can't wait for all the new adventures, silly jokes, cozy dates, and quiet moments we are going to share together in the years ahead.",
+    "4 tahun ini seru banget (1.460+ hari yang luar biasa), and I can't wait for all the new adventures, silly jokes, cozy dates, and quiet moments we are going to share together in the years ahead.",
   ],
   closing: 'Happy anniversary, love. I love you more than words could ever say.',
   signature: 'Forever & always yours, Rama',
-  date: '04 Mei 2026',
+  date: '10 November 2026',
   sealText: 'R & A',
 };
 

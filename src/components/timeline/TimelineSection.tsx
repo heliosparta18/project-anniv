@@ -69,7 +69,7 @@ export function TimelineSection({
           Perjalanan Cerita Kita
         </h2>
         <p className="text-anniv-secondary text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-          Dari obrolan canggung pertama di Senopati sampai 365 hari penuh tawa dan petualangan bareng kamu.
+          Dari obrolan canggung pertama sampai 4 tahun penuh tawa dan petualangan bareng kamu.
         </p>
       </div>
 

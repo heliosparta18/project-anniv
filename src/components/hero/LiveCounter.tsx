@@ -91,7 +91,7 @@ export function LiveCounter({
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-anniv-rose opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-anniv-rose" />
             </span>
-            <span>{counter.formattedElapsed || `${counter.totalDays || 365} hari bersama`}</span>
+            <span>{counter.formattedElapsed || `${counter.totalDays || 1461} hari bersama`}</span>
           </div>
           <span className="hidden sm:inline text-anniv-dusty" aria-hidden="true">&bull;</span>
           <span className="font-serif italic text-anniv-truffle">

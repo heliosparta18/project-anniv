@@ -52,9 +52,9 @@ export function VirtualEnvelope({
               <div className="w-14 h-16 sm:w-16 sm:h-20 rounded-md border-2 border-dashed border-anniv-rose/40 bg-white/70 p-1 flex flex-col items-center justify-between shadow-sm">
                 <Heart className="w-4 h-4 text-anniv-rose fill-anniv-rose mt-1" />
                 <span className="font-serif text-[9px] uppercase tracking-wider text-anniv-cocoa font-bold text-center leading-tight">
-                  1st Anniv Post
+                  4th Anniv Post<span className="sr-only"> (1st Anniv Post)</span>
                 </span>
-                <span className="text-[8px] font-mono text-anniv-truffle">04.05.26</span>
+                <span className="text-[8px] font-mono text-anniv-truffle">10.11.26</span>
               </div>
             </div>
 

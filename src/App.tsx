@@ -24,7 +24,7 @@ export function App() {
             <Heart className="w-4 h-4 fill-anniv-rose text-anniv-rose inline-block" />
           </p>
           <p className="text-xs text-anniv-truffle">
-            {coupleProfile.myName} &amp; {coupleProfile.partnerName} &bull; 1 Year of Beautiful Memories
+            {coupleProfile.myName} &amp; {coupleProfile.partnerName} &bull; 4 Years of Beautiful Memories
           </p>
         </div>
       }

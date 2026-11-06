@@ -159,7 +159,7 @@ export function CouponBook({
               aria-label="Kembalikan semua voucher yang terpakai"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>Reset Voucher ({redeemedCount})</span>
+              <span>{`Reset Voucher (${redeemedCount})`}</span>
             </button>
           )}
         </div>

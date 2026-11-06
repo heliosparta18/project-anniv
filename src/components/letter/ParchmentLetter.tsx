@@ -33,7 +33,7 @@ export function ParchmentLetter({
               Surat Cinta Buat Kamu
             </p>
             <p className="text-[11px] text-anniv-truffle font-medium">
-              1st Anniversary Edition &bull; Personal Note
+              4th Anniversary Edition &bull; Personal Note
             </p>
           </div>
         </div>

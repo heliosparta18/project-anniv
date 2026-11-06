@@ -49,6 +49,7 @@ async function main() {
     'Tier 2: Boundary & Corner Cases': allTestFiles.filter(f => f.includes('tier2_boundaries')),
     'Tier 3: Cross-Feature Interactions': allTestFiles.filter(f => f.includes('tier3_interactions')),
     'Tier 4: Real-World Workload Scenarios': allTestFiles.filter(f => f.includes('tier4_workloads')),
+    'Tier 5: White-Box Adversarial Hardening': allTestFiles.filter(f => f.includes('tier5_adversarial')),
     'Static Integrity & Invariant Audits': allTestFiles.filter(f => f.includes('static_integrity'))
   };
 
