@@ -213,3 +213,50 @@ test('Feature 7 - Vinyl Audio Player: Track Switcher Cycles Music Playlist', () 
   assert.ok(vinylCode.includes('grid-cols-1 lg:grid-cols-12'), 'Turntable deck must use responsive 12-column desktop reflow');
   assert.ok(vinylCode.includes('variant === \'dock\''), 'VinylPlayer must support both dedicated section and floating dock variants');
 });
+
+test('Feature 7 - Vinyl Audio Player: YouTube Background Audio Integration & Floating Controls', () => {
+  // 1. Verify primary track 1 configuration in anniversaryData.ts
+  const track1 = musicTracks[0];
+  assert.ok(track1, 'Track 1 must exist');
+  assert.strictEqual(track1.id, 'track-1', 'Track 1 id must be track-1');
+  assert.strictEqual(track1.title, 'Anugerah Terindah', 'Track 1 title must be Anugerah Terindah');
+  assert.strictEqual(track1.artist, 'Andmesh Kamaleng', 'Track 1 artist must be Andmesh Kamaleng');
+  assert.strictEqual(track1.youtubeId, 'o25_Tn8BnFM', 'Track 1 youtubeId must be o25_Tn8BnFM');
+  assert.strictEqual(track1.duration, '3:45', 'Track 1 duration must be 3:45');
+  assert.ok(
+    typeof track1.personalNote === 'string' && track1.personalNote.length > 20,
+    'Track 1 personalNote must be a sincere casual Indonesian note'
+  );
+  assert.ok(
+    typeof track1.notes === 'string' && track1.notes.length > 20,
+    'Track 1 notes must be present'
+  );
+
+  // 2. Source inspection of useAudioPlayer.ts for YouTube IFrame integration
+  const hookCode = fs.readFileSync(useAudioPlayerPath, 'utf8');
+  assert.ok(hookCode.includes('loadYouTubeApi'), 'useAudioPlayer must define YouTube API loader');
+  assert.ok(hookCode.includes('youtube.com/iframe_api'), 'useAudioPlayer must reference YouTube iframe API');
+  assert.ok(hookCode.includes('globalYtPlayer'), 'useAudioPlayer must coordinate YouTube player singleton');
+  assert.ok(hookCode.includes('playVideo'), 'useAudioPlayer must issue playVideo to YouTube player');
+  assert.ok(hookCode.includes('pauseVideo'), 'useAudioPlayer must issue pauseVideo to YouTube player');
+  assert.ok(hookCode.includes('activateSynthFallback'), 'useAudioPlayer must retain Web Audio synth fallback');
+
+  // 3. Source inspection of VinylPlayer.tsx floating dock controls and state sharing
+  const vinylCode = fs.readFileSync(vinylPlayerPath, 'utf8');
+  assert.ok(vinylCode.includes('variant === \'dock\''), 'VinylPlayer must support compact floating dock variant');
+  assert.ok(vinylCode.includes('sharedState'), 'VinylPlayer must support sharedState for synchronized playback');
+  assert.ok(vinylCode.includes('sharedActions'), 'VinylPlayer must support sharedActions for synchronized playback');
+  assert.ok(
+    vinylCode.includes('w-11 h-11 min-w-[44px] min-h-[44px]') && vinylCode.includes('togglePlay'),
+    'Floating dock play button must enforce 44x44px touch target'
+  );
+  assert.ok(
+    vinylCode.includes('animate-[spin_4s_linear_infinite]'),
+    'Floating dock vinyl disc must spin during playback'
+  );
+
+  // 4. Zero em-dash invariant
+  assert.ok(!hookCode.includes('\u2014'), 'useAudioPlayer.ts must not contain unicode em-dash');
+  assert.ok(!vinylCode.includes('\u2014'), 'VinylPlayer.tsx must not contain unicode em-dash');
+});
+

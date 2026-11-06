@@ -13,7 +13,7 @@
 | 3. Cross-Feature Combinations | 2 suites | Pairwise cross-module interactions and state sharing |
 | 4. Real-World Application | 2 suites | Complete romantic journey and responsive viewport verification |
 | 5. Adversarial Coverage Hardening | 6 suites | Anti-slop zero em-dash, contrast, touch targets, state persistence |
-| **Total** | **24 suites (100 tests)** | **Comprehensive baseline & hardening** |
+| **Total** | **24 suites (101 tests)** | **Comprehensive baseline & hardening** |
 
 ## Feature Checklist
 | Feature | Tier 1 | Tier 2 | Tier 3 | Tier 4 |

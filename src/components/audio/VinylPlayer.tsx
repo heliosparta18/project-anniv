@@ -16,13 +16,15 @@ import {
 } from 'lucide-react';
 import type { MusicTrack } from '../../types/anniversary';
 import { musicTracks as defaultMusicTracks, coupleProfile } from '../../data/anniversaryData';
-import { useAudioPlayer } from '../../hooks/useAudioPlayer';
+import { useAudioPlayer, type AudioPlayerState, type AudioPlayerActions } from '../../hooks/useAudioPlayer';
 
 export interface VinylPlayerProps {
   tracks?: MusicTrack[];
   variant?: 'section' | 'dock';
   className?: string;
   onTrackChange?: (track: MusicTrack) => void;
+  sharedState?: AudioPlayerState;
+  sharedActions?: AudioPlayerActions;
 }
 
 /**
@@ -40,10 +42,15 @@ export const VinylPlayer: React.FC<VinylPlayerProps> = ({
   variant = 'section',
   className = '',
   onTrackChange,
+  sharedState,
+  sharedActions,
 }) => {
   const playlist = tracks;
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
-  const [state, actions] = useAudioPlayer(tracks);
+  const [localState, localActions] = useAudioPlayer(tracks);
+
+  const state = sharedState || localState;
+  const actions = sharedActions || localActions;
 
   const {
     isPlaying,
@@ -180,7 +187,13 @@ export const VinylPlayer: React.FC<VinylPlayerProps> = ({
               >
                 <X className="w-5 h-5" />
               </button>
-              <VinylPlayer tracks={tracks} variant="section" onTrackChange={onTrackChange} />
+              <VinylPlayer
+                tracks={tracks}
+                variant="section"
+                onTrackChange={onTrackChange}
+                sharedState={state}
+                sharedActions={actions}
+              />
             </div>
           </div>
         )}
@@ -487,7 +500,7 @@ export const VinylPlayer: React.FC<VinylPlayerProps> = ({
             <p className="text-xs text-anniv-truffle mb-4">by {currentTrack.artist}</p>
 
             <blockquote className="font-serif italic text-base sm:text-lg text-anniv-cocoa leading-relaxed bg-anniv-peach/40 p-4 rounded-xl border-l-4 border-anniv-rose mb-4">
-              &ldquo;{currentTrack.notes || 'Soundtrack indah dari setiap detik kebersamaan kita.'}&rdquo;
+              &ldquo;{currentTrack.personalNote || currentTrack.notes || 'Soundtrack indah dari setiap detik kebersamaan kita.'}&rdquo;
             </blockquote>
 
             <div className="text-right font-serif text-sm text-anniv-rose font-bold">
