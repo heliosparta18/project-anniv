@@ -50,6 +50,8 @@ export interface LoveReason {
   text: string;
   category: 'habits' | 'memories' | 'quirks' | 'feelings';
   icon?: string;
+  title?: string;
+  description?: string;
 }
 
 export interface Coupon {
