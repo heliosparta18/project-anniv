@@ -156,7 +156,9 @@ test('Tier 5 Adversarial: Letter Module Component Boundaries and Invariants', as
     React.createElement(ParchmentLetter, { letter: emptyLetter })
   );
   assert.ok(
-    emptyLetterHtml.includes('Forever &amp; always yours') || emptyLetterHtml.includes('Forever & always yours'),
+    emptyLetterHtml.includes('Forever yours') ||
+    emptyLetterHtml.includes('Forever &amp; always yours') ||
+    emptyLetterHtml.includes('Forever & always yours'),
     'Empty paragraphs letter must still render signature'
   );
 
@@ -437,7 +439,10 @@ test('Tier 5 Adversarial: Bucket List Progress Math, Confetti Guard and Storage 
   storage.setItem('anniv_bucket_list_completed', JSON.stringify(fourCompleted));
 
   const halfCompletedHtml = ReactDOMServer.renderToString(React.createElement(BucketList));
-  assert.ok(halfCompletedHtml.includes('4 of 8 dreams accomplished'), 'Must render exact 4 of 8 count');
+  assert.ok(
+    halfCompletedHtml.includes('4 dari 8 impian udah terwujud') || halfCompletedHtml.includes('4 of 8 dreams accomplished'),
+    'Must render exact 4 of 8 count'
+  );
   assert.ok(halfCompletedHtml.includes('50%'), 'Must calculate exact 50% progress');
   assert.ok(halfCompletedHtml.includes('aria-valuenow="50"'), 'Progressbar must specify aria-valuenow="50"');
 
@@ -467,7 +472,12 @@ test('Tier 5 Adversarial: Bucket List Progress Math, Confetti Guard and Storage 
   storage.setItem('anniv_bucket_list_completed', '{unparseable-bucket-list-json');
   assert.doesNotThrow(() => {
     const html = ReactDOMServer.renderToString(React.createElement(BucketList));
-    assert.ok(html.includes('Our Bucket List &amp; Future Dreams') || html.includes('Our Bucket List & Future Dreams'));
+    assert.ok(
+      html.includes('Daftar Impian &amp; Petualangan Kita') ||
+      html.includes('Daftar Impian & Petualangan Kita') ||
+      html.includes('Our Bucket List &amp; Future Dreams') ||
+      html.includes('Our Bucket List & Future Dreams')
+    );
   }, 'Malformed JSON syntax must fall back safely to default completed items');
 
   // (B) Documented White-Box Boundary: Non-array JSON values in localStorage

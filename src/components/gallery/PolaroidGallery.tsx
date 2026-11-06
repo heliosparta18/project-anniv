@@ -17,11 +17,11 @@ interface CategoryFilterOption {
 }
 
 const CATEGORY_OPTIONS: CategoryFilterOption[] = [
-  { id: 'all', label: 'All Moments' },
-  { id: 'dates', label: 'Dates & Cafes' },
-  { id: 'travel', label: 'Trips & Travel' },
-  { id: 'candid', label: 'Candid Smiles' },
-  { id: 'favorites', label: 'Our Favorites' },
+  { id: 'all', label: 'Semua Momen' },
+  { id: 'dates', label: 'Kencan & Kafe' },
+  { id: 'travel', label: 'Jalan-Jalan' },
+  { id: 'candid', label: 'Tawa Spontan' },
+  { id: 'favorites', label: 'Favorit Kita' },
 ];
 
 export function PolaroidGallery({
@@ -59,10 +59,10 @@ export function PolaroidGallery({
           <span>Chapter 3 &bull; Polaroid Scrapbook</span>
         </div>
         <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-anniv-cocoa mb-3 tracking-tight">
-          Moments Frozen in Time
+          Momen Manis Bareng Kamu
         </h2>
         <p className="text-anniv-secondary text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-          Organic polaroid cards with washi tape ribbons and handwritten secret notes on the back. Tap any card to read our notes or view in high resolution.
+          Kumpulan foto polaroid kenangan kita. Klik fotonya buat baca catatan kecil atau liat foto lebih jelas.
         </p>
       </div>
 

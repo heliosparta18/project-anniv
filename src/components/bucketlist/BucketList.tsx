@@ -106,9 +106,9 @@ export function BucketList({
   }, [items, completedIds, activeFilter]);
 
   const STATUS_FILTERS: { key: BucketListFilterStatus; label: string; count: number }[] = [
-    { key: 'all', label: 'All Dreams', count: totalCount },
-    { key: 'completed', label: 'Accomplished', count: completedCount },
-    { key: 'pending', label: 'Future Goals', count: totalCount - completedCount },
+    { key: 'all', label: 'Semua Impian', count: totalCount },
+    { key: 'completed', label: 'Tercapai', count: completedCount },
+    { key: 'pending', label: 'Rencana Depan', count: totalCount - completedCount },
   ];
 
   return (
@@ -124,7 +124,7 @@ export function BucketList({
           <span>Chapter 4 &bull; Bucket List</span>
         </div>
         <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-anniv-cocoa mb-3">
-          Our Bucket List &amp; Future Dreams
+          Daftar Impian &amp; Petualangan Kita
         </h2>
         <p className="text-anniv-secondary text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
           Daftar impian dan petualangan yang ingin kita wujudkan bersama, satu per satu.
@@ -141,7 +141,7 @@ export function BucketList({
                 PROGRESS IMPIAN KITA
               </div>
               <h3 className="font-serif text-xl sm:text-2xl font-bold text-anniv-cocoa">
-                {completedCount} of {totalCount} dreams accomplished
+                {completedCount} dari {totalCount} impian udah terwujud
               </h3>
             </div>
             <div className="text-left sm:text-right">
@@ -157,7 +157,7 @@ export function BucketList({
             aria-valuenow={progressPercentage}
             aria-valuemin={0}
             aria-valuemax={100}
-            aria-label={`${completedCount} of ${totalCount} dreams accomplished`}
+            aria-label={`${completedCount} dari ${totalCount} impian udah terwujud`}
             className="w-full bg-anniv-peach/70 h-3 sm:h-3.5 rounded-full overflow-hidden p-0.5 border border-anniv-borderSubtle/60"
           >
             <div

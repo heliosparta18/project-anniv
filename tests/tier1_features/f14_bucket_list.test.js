@@ -95,7 +95,7 @@ test('Feature 14 - Bucket List: Checklist Items Display & Progress Calculation',
   assert.ok(listCode.includes('aria-valuemin='), 'Progress bar must define aria-valuemin attribute');
   assert.ok(listCode.includes('aria-valuemax='), 'Progress bar must define aria-valuemax attribute');
   assert.ok(
-    listCode.includes('dreams accomplished'),
+    listCode.includes('impian udah terwujud') || listCode.includes('dreams accomplished'),
     'Progress bar banner must announce completed dreams count'
   );
 

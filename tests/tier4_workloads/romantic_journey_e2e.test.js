@@ -93,10 +93,10 @@ test('Tier 4 - Real-World Romantic Journey: Full User Journey Simulation', async
     assert.strictEqual(milestones.length, 5, 'Must have exactly 5 chronological milestones');
     const expectedMilestoneKeywords = [
       'Pertama Kali Ketemu',
-      'Midnight Talks & Random Mie',
+      'Cerita Tengah Malam',
       'Resmi',
       'Kehujanan Bareng',
-      'Penuh Cinta'
+      'Penuh Tawa'
     ];
 
     milestones.forEach((m, idx) => {

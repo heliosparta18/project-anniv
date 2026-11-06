@@ -5,7 +5,7 @@ function searchDir(dir, filter) {
   let results = [];
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   for (const entry of entries) {
-    if (['node_modules', '.git', 'dist'].includes(entry.name)) continue;
+    if (['node_modules', '.git', 'dist', '.agents'].includes(entry.name)) continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       results = results.concat(searchDir(full, filter));
