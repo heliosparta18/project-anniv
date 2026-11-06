@@ -1,0 +1,416 @@
+/**
+ * Anniversary Website - Centralized Production Data Configuration
+ * Single source of truth containing heartfelt, authentic Gen-Z Indonesian/English copy.
+ * Free of AI buzzwords, cliches, or melodrama.
+ */
+
+import type {
+  AnniversaryData,
+  CoupleProfile,
+  Milestone,
+  PolaroidPhoto,
+  LoveLetter,
+  LoveReason,
+  Coupon,
+  BucketListItem,
+  MusicTrack,
+} from '../types/anniversary';
+
+export const coupleProfile: CoupleProfile = {
+  partnerName: 'Alya',
+  myName: 'Rama',
+  anniversaryDate: '2025-05-04T00:00:00', // Start of relationship
+  tagline: '365 Days of Loving You',
+  subtagline: 'Still my favorite person to do absolutely nothing with. Happy 1st anniversary, sayang.',
+};
+
+export const milestones: Milestone[] = [
+  {
+    id: 'milestone-1',
+    date: '14 Februari 2025',
+    title: 'Pertama Kali Ketemu (Dan Aku Nervous Parah)',
+    description: "Masih inget banget waktu pertama kali ketemu di cafe itu. Aku pura-pura sibuk ngecek HP biar keliatan keren dan sok santai, padahal tangan udah dingin banget saking nervous-nya. Pas kamu akhirnya dateng dan senyum, rasanya mendadak tenang. Dari obrolan canggung 10 menit pertama sampai akhirnya gak kerasa ngobrol 3 jam penuh ketawa, that was the exact moment I thought: 'I really, really like this person.'",
+    category: 'firsts',
+    location: 'Kopi Kenangan Heritage, Senopati',
+    image: '/photos/milestone-1.svg',
+  },
+  {
+    id: 'milestone-2',
+    date: '28 Maret 2025',
+    title: 'Midnight Talks & Random Mie Pinggir Jalan',
+    description: 'Keliling jalanan kota yang udah mulai sepi tanpa tujuan yang jelas, muter playlist kesukaan kita di Spotify, terus gantian nyanyi dengan suara yang pas-pasan. Ujung-ujungnya jam 1 malem kita malah melipir makan mie kuah di pinggir jalan karena mendadak laper. Gak ada yang mewah, tapi malam itu beneran bikin aku sadar kalau bahagia itu sesederhana ada di samping kamu.',
+    category: 'memories',
+    location: 'Jalanan Kota & Warung Mie 24 Jam',
+    image: '/photos/milestone-2.svg',
+  },
+  {
+    id: 'milestone-3',
+    date: '04 Mei 2025',
+    title: 'Resmi Jadi Pasangan (Best Decision Ever)',
+    description: 'Hari paling mendebarkan tapi juga hari paling bahagia dalam hidup aku. Rasanya detak jantung udah kayak drum solo pas mau ngomong. Dan waktu kamu senyum sambil ngangguk pelan, rasanya kayak dapet hadiah paling berharga di dunia. Menjadi pasangan kamu adalah hal terbaik yang pernah terjadi di hidup aku.',
+    category: 'milestones',
+    location: 'Rooftop Garden Cafe, Jakarta',
+    image: '/photos/milestone-3.svg',
+  },
+  {
+    id: 'milestone-4',
+    date: '19 Agustus 2025',
+    title: 'Kehujanan Bareng & Ketawa Gak Jelas',
+    description: 'Tiba-tiba hujan deras pas kita lagi jalan sore. Alih-alih bete, kita malah lari sambil ketawa-ketawa neduh di emperan ruko. Baju kita berdua basah kuyup, rambut kamu berantakan, tapi mata kamu binar-binar ceria banget. Momen kecil kayak gini yang selalu bikin aku sadar kalau bareng kamu, hari yang buruk pun bakal tetep kerasa manis.',
+    category: 'trips',
+    location: 'Emperan Toko Sudirman',
+    image: '/photos/milestone-4.svg',
+  },
+  {
+    id: 'milestone-5',
+    date: '04 Mei 2026',
+    title: 'Satu Tahun Penuh Cinta, Cerita, & Tawa',
+    description: '365 hari yang lewat cepet banget karena setiap harinya seru bareng kamu. Makasih udah jadi tempat pulang paling nyaman, partner makan paling klop, dan orang yang selalu bikin hari-hari biasa jadi luar biasa. 1 year down, and I still want you for all the years to come.',
+    category: 'milestones',
+    location: 'Here With You 💕',
+    image: '/photos/milestone-5.svg',
+  },
+];
+
+export const polaroids: PolaroidPhoto[] = [
+  {
+    id: 'polaroid-1',
+    url: '/photos/polaroid-1.svg',
+    thumbnail: '/photos/polaroid-1.svg',
+    caption: 'That sunset we almost missed 🌅',
+    date: 'Juli 2025',
+    location: 'Pantai Indah Kapuk',
+    category: 'travel',
+    rotation: -2.2,
+    note: 'Inget gak pas kita lari-larian di pantai cuma buat ngejar sunset 5 menit sebelum gelap? Foto ini emang agak blur, tapi tawa kamu di sini selalu bikin aku pengen muter waktu balik ke sore itu.',
+  },
+  {
+    id: 'polaroid-2',
+    url: '/photos/polaroid-2.svg',
+    thumbnail: '/photos/polaroid-2.svg',
+    caption: 'Your prettiest laugh (candid)',
+    date: 'September 2025',
+    location: 'Weekend Coffee Date',
+    category: 'candid',
+    rotation: 1.8,
+    note: 'Kamu gak sadar pas aku jepret foto ini. Kamu lagi ketawa lepas banget gara-gara lelucon garing aku. Senyum kamu selalu jadi pemandangan favorit aku di dunia ini.',
+  },
+  {
+    id: 'polaroid-3',
+    url: '/photos/polaroid-3.svg',
+    thumbnail: '/photos/polaroid-3.svg',
+    caption: 'Our favorite corner table 🍵',
+    date: 'Oktober 2025',
+    location: 'Kroma Cafe',
+    category: 'dates',
+    rotation: -1.4,
+    note: 'Tempat saksi bisu kamu curhat soal kerjaan dan perkuliahan berjam-jam sambil ngabisin segelas matcha latte. I never get bored listening to your voice.',
+  },
+  {
+    id: 'polaroid-4',
+    url: '/photos/polaroid-4.svg',
+    thumbnail: '/photos/polaroid-4.svg',
+    caption: 'Zero filter, 100% us 🚗',
+    date: 'November 2025',
+    location: 'Weekend Getaway',
+    category: 'favorites',
+    rotation: 2.4,
+    note: 'Muka bantal, kena macet 2 jam di jalan tol, tapi tetep asik karokean bareng. Gak peduli seberapa macet jalannya, asalkan macetnya bareng kamu.',
+  },
+  {
+    id: 'polaroid-5',
+    url: '/photos/polaroid-5.svg',
+    thumbnail: '/photos/polaroid-5.svg',
+    caption: 'The birthday girl & her cake 🎂',
+    date: 'Januari 2026',
+    location: 'Birthday Dinner',
+    category: 'dates',
+    rotation: -1.9,
+    note: 'Ekspresi kaget kamu pas kuenya dateng itu priceless banget. Seneng banget bisa liat kamu bahagia di hari ulang tahun kamu. You deserve all the good things in the world.',
+  },
+  {
+    id: 'polaroid-6',
+    url: '/photos/polaroid-6.svg',
+    thumbnail: '/photos/polaroid-6.svg',
+    caption: 'My favorite lazy Sunday 🥐',
+    date: 'Maret 2026',
+    location: 'Bakehouse Morning',
+    category: 'favorites',
+    rotation: 1.5,
+    note: 'Pagi-pagi nyari roti dan kopi sambil masih pake celana santai dan mata ngantuk. Definisi hari libur paling sempurna bareng orang tersayang.',
+  },
+];
+
+export const loveLetter: LoveLetter = {
+  title: 'A Letter For You',
+  salutation: 'To My Favorite Human in the Entire World,',
+  opening: 'Hai sayang, Happy 1st Anniversary ya!',
+  paragraphs: [
+    'Jujur, aku bukan tipe orang yang pinter ngerangkai kata-kata puitis kayak di novel romance. Tapi kalau ada satu hal yang aku tahu pasti dan berani aku jamin 100%, itu adalah betapa bersyukurnya aku punya kamu di hidup aku.',
+    'Makasih ya udah selalu ada. Makasih udah selalu sabar ngadepin sifat aku yang kadang keras kepala atau suka lupa hal-hal sepele. Makasih udah selalu dengerin cerita-cerita random aku yang gak jelas ujungnya, udah selalu nemenin makan mie malem-malem pas lagi lapar, dan udah jadi tempat pulang yang paling tenang tiap kali dunia lagi kerasa berisik banget.',
+    'Kamu itu bukan cuma pasangan buat aku. You are my best friend, my favorite gossip buddy, and the very first person I always want to text whenever something funny or exciting happens in my day.',
+    'I genuinely love all your little quirks. Cara kamu nyanyi di mobil pas lagi happy, cara kamu ngambek tipis kalau telat makan, dan cara mata kamu berbinar-binar kalau ngeliat makanan manis favorit kamu. Life just feels so much softer, warmer, and full of color when you are around.',
+    "365 hari ini seru banget, and I can't wait for all the new adventures, silly jokes, cozy dates, and quiet moments we are going to share together in the years ahead.",
+  ],
+  closing: 'Happy anniversary, love. I love you more than words could ever say.',
+  signature: 'Forever & always yours, Rama',
+  date: '04 Mei 2026',
+  sealText: 'R & A',
+};
+
+export const loveReasons: LoveReason[] = [
+  {
+    id: 'reason-1',
+    number: 1,
+    text: 'Cara kamu ketawa lepas pas denger lelucon receh aku yang sebenernya garing banget.',
+    category: 'quirks',
+    icon: 'Smile',
+  },
+  {
+    id: 'reason-2',
+    number: 2,
+    text: 'Gimana kamu selalu inget detail-detail kecil yang pernah aku ceritain berbulan-bulan lalu.',
+    category: 'habits',
+    icon: 'Sparkles',
+  },
+  {
+    id: 'reason-3',
+    number: 3,
+    text: 'Kamu gak pernah nge-judge aku pas aku lagi capek dan pengen bertingkah konyol apa adanya.',
+    category: 'feelings',
+    icon: 'Shield',
+  },
+  {
+    id: 'reason-4',
+    number: 4,
+    text: 'Pelukan tiba-tiba kamu yang selalu ampuh bikin semua rasa cemas dan overthinking langsung hilang.',
+    category: 'habits',
+    icon: 'Heart',
+  },
+  {
+    id: 'reason-5',
+    number: 5,
+    text: 'Kamu selalu percaya sama mimpi-mimpi aku, bahkan di saat aku sendiri lagi ragu sama diriku.',
+    category: 'feelings',
+    icon: 'Sun',
+  },
+  {
+    id: 'reason-6',
+    number: 6,
+    text: 'Muka gemes kamu yang super serius pas lagi fokus ngerjain sesuatu atau milih menu makanan.',
+    category: 'quirks',
+    icon: 'Eye',
+  },
+  {
+    id: 'reason-7',
+    number: 7,
+    text: 'Gimana kamu selalu otomatis tau pesenan makanan/minuman favorit aku tanpa perlu nanya lagi.',
+    category: 'habits',
+    icon: 'Coffee',
+  },
+  {
+    id: 'reason-8',
+    number: 8,
+    text: 'Suara kamu di telepon sebelum tidur yang selalu bikin hari yang berat jadi terasa ringan.',
+    category: 'memories',
+    icon: 'Moon',
+  },
+  {
+    id: 'reason-9',
+    number: 9,
+    text: 'Hati kamu yang lembut dan tulus, selalu peduli sama orang-orang dan kucing jalanan di sekitar kamu.',
+    category: 'feelings',
+    icon: 'Feather',
+  },
+  {
+    id: 'reason-10',
+    number: 10,
+    text: 'Karena sama kamu, aku selalu terinspirasi buat jadi versi diriku yang lebih baik dan lebih sabar setiap hari.',
+    category: 'feelings',
+    icon: 'TrendingUp',
+  },
+  {
+    id: 'reason-11',
+    number: 11,
+    text: 'Cara kamu nyandarin kepala di pundak aku pas kita lagi nonton bioskop atau duduk di mobil.',
+    category: 'quirks',
+    icon: 'Flame',
+  },
+  {
+    id: 'reason-12',
+    number: 12,
+    text: 'Karena bareng kamu, hening gak pernah canggung. Duduk sebelahan sambil asik sendiri aja rasanya udah cukup.',
+    category: 'memories',
+    icon: 'HeartHandshake',
+  },
+];
+
+export const coupons: Coupon[] = [
+  {
+    id: 'coupon-1',
+    title: 'Bebas Pilih Tempat Makan',
+    description: 'Berlaku untuk 1x makan bareng di mana kamu yang 100% nentuin tempat makannya, dan aku bakal senyum nemenin tanpa boleh komplain.',
+    terms: "Berlaku kapanpun, anti 'terserah' pass, tidak ada batas kedaluwarsa.",
+    icon: 'Utensils',
+    category: 'pass',
+    expires: 'Never',
+  },
+  {
+    id: 'coupon-2',
+    title: 'Late Night Boba / Ice Cream Run',
+    description: 'Jam berapapun kamu mendadak BM boba, es krim, atau camilan manis, aku bakal langsung anterin atau beliin buat kamu.',
+    terms: 'Midnight craving savior, dapat ditebus bahkan di hari kerja.',
+    icon: 'CupSoda',
+    category: 'treat',
+    expires: 'Never',
+  },
+  {
+    id: 'coupon-3',
+    title: 'Free 20-Min Backrub & Head Massage',
+    description: 'Pijat punggung dan kepala rileks selama minimal 20 menit pas kamu lagi capek sehabis aktivitas padat seharian.',
+    terms: 'Dilengkapi minyak aroma terapi wangi pilihan kamu.',
+    icon: 'Sparkles',
+    category: 'treat',
+    expires: 'Never',
+  },
+  {
+    id: 'coupon-4',
+    title: 'Unlimited Hugs & Cuddles Pass',
+    description: 'Tiket bebas peluk kapanpun dan sepuasnya tanpa batas waktu, guaranteed to recharge your energy 100%.',
+    terms: 'Berlaku seumur hidup, tanpa syarat.',
+    icon: 'Heart',
+    category: 'pass',
+    expires: 'Lifetime',
+  },
+  {
+    id: 'coupon-5',
+    title: 'Movie Night: Kamu Penentu Filmnya',
+    description: 'Kamu bebas milih film apapun buat kita tonton bareng (termasuk drakor maraton atau film romance banjir air mata), tanpa protes.',
+    terms: 'Dilengkapi popcorn hangat dan camilan favorit kamu.',
+    icon: 'Film',
+    category: 'activity',
+    expires: 'Never',
+  },
+  {
+    id: 'coupon-6',
+    title: "Kartu 'Kamu Selalu Benar'",
+    description: 'Bisa dikeluarin pas kita lagi ada perdebatan kecil yang gak penting. Begitu kartu ini keluar, aku langsung nyerah dan ngaku kamu yang bener.',
+    terms: 'Debat truce card. Gunakan secara bijak!',
+    icon: 'ShieldCheck',
+    category: 'pass',
+    expires: 'Never',
+  },
+  {
+    id: 'coupon-7',
+    title: 'A Full Day of Pampering',
+    description: 'Satu hari penuh princess treatment: aku yang siapin kopi/sarapan, bawain tas kamu, dan nurutin itinerary santai yang kamu mau.',
+    terms: 'Harap booking santai minimal 1 hari sebelumnya.',
+    icon: 'Crown',
+    category: 'treat',
+    expires: 'Never',
+  },
+  {
+    id: 'coupon-8',
+    title: 'Weekend Roadtrip Escape',
+    description: 'Keluar kota sebentar di akhir pekan buat recharge pikiran, ngopi dengan pemandangan sejuk, dan muter playlist kesukaan kita berdua.',
+    terms: 'Termasuk obrolan santai dan camilan sepanjang perjalanan.',
+    icon: 'Car',
+    category: 'activity',
+    expires: 'Never',
+  },
+];
+
+export const bucketListItems: BucketListItem[] = [
+  {
+    id: 'bucket-1',
+    text: 'Nonton konser musik musisi idola bareng',
+    completed: true,
+    targetYear: '2025',
+  },
+  {
+    id: 'bucket-2',
+    text: 'Sunset chasing di tepi pantai sampai gelap',
+    completed: true,
+    targetYear: '2025',
+  },
+  {
+    id: 'bucket-3',
+    text: 'Cafe hopping seharian nyari matcha paling enak',
+    completed: true,
+    targetYear: '2025',
+  },
+  {
+    id: 'bucket-4',
+    text: 'Survive kehujanan bareng tanpa bad mood',
+    completed: true,
+    targetYear: '2025',
+  },
+  {
+    id: 'bucket-5',
+    text: 'Liburan ke Kyoto / Hokkaido bareng pas musim semi',
+    completed: false,
+    targetYear: '2027',
+  },
+  {
+    id: 'bucket-6',
+    text: 'Bikin kue dan pasta sendiri di dapur dari nol sampai berantakan',
+    completed: false,
+    targetYear: '2026',
+  },
+  {
+    id: 'bucket-7',
+    text: 'Adopsi kucing lucu bareng di rumah sendiri',
+    completed: false,
+    targetYear: '2027',
+  },
+  {
+    id: 'bucket-8',
+    text: 'Rayain anniversary ke-5, ke-10, and forever after',
+    completed: false,
+    targetYear: 'Forever',
+  },
+];
+
+export const musicTracks: MusicTrack[] = [
+  {
+    id: 'track-1',
+    title: 'Until I Found You',
+    artist: 'Stephen Sanchez',
+    src: '/audio/until-i-found-you.mp3',
+    notes: 'Lagu yang pertama kali bikin aku sadar kalau kehadiran kamu di hidup aku itu beneran seindah itu.',
+  },
+  {
+    id: 'track-2',
+    title: 'Here With Me',
+    artist: 'd4vd',
+    src: '/audio/here-with-me.mp3',
+    notes: 'Soundtrack wajib pas kita lagi late night drive keliling kota sambil cerita masa depan.',
+  },
+  {
+    id: 'track-3',
+    title: 'Die With A Smile',
+    artist: 'Lady Gaga & Bruno Mars',
+    src: '/audio/die-with-a-smile.mp3',
+    notes: 'Inget gak pas kita karokean lagu ini di mobil dengan nada tinggi yang berantakan tapi heboh banget?',
+  },
+  {
+    id: 'track-4',
+    title: 'Satu Bulan',
+    artist: 'Bernadya',
+    src: '/audio/satu-bulan.mp3',
+    notes: 'Lagu pengingat betapa berharganya setiap momen kebersamaan yang kita punya sekarang.',
+  },
+];
+
+export const anniversaryData: AnniversaryData = {
+  profile: coupleProfile,
+  milestones,
+  polaroids,
+  loveLetter,
+  reasons: loveReasons,
+  coupons,
+  bucketList: bucketListItems,
+  musicTracks,
+};
+
+export default anniversaryData;

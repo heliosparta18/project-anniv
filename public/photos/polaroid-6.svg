@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="grad_378761173" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2" />
+      <stop offset="50%" stop-color="#E8DFD5" />
+      <stop offset="100%" stop-color="#FAF7F2" />
+    </linearGradient>
+    <pattern id="pat_378761173" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1.5" fill="rgba(158, 71, 89, 0.06)" />
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#grad_378761173)" />
+  <rect width="100%" height="100%" fill="url(#pat_378761173)" />
+
+  <!-- Subtle Ambient Glow Rings -->
+  <circle cx="300" cy="252" r="210" fill="#9E4759" opacity="0.07" />
+  <circle cx="300" cy="252" r="132" fill="#9E4759" opacity="0.09" />
+
+  <!-- Inner Soft Border -->
+  <rect x="16" y="16" width="568" height="568" rx="12" fill="none" stroke="#9E4759" stroke-width="1.2" stroke-opacity="0.25" stroke-dasharray="6,4" />
+
+  <!-- Central Icon Badge -->
+  <g transform="translate(272, 224) scale(2.33)" color="#9E4759">
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
+  </g>
+
+  <!-- Category Tag (if provided) -->
+  
+  <g transform="translate(300, 390)">
+    <rect x="-60" y="-14" width="120" height="24" rx="12" fill="#9E4759" opacity="0.12" />
+    <text text-anchor="middle" y="2" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="1.5" fill="#9E4759" text-transform="uppercase">Favorites</text>
+  </g>
+
+  <!-- Title Text -->
+  <text x="50%" y="444" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="26" font-weight="600" fill="#3B2F2F">
+    Lazy Sunday Morning
+  </text>
+
+  <!-- Subtitle Text -->
+  
+  <text x="50%" y="491.99999999999994" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="500" fill="#6F5E5C">
+    Bakehouse
+  </text>
+
+  <!-- Romantic Sparkle Accents -->
+  <g transform="translate(132, 168.00000000000003)" fill="#9E4759" opacity="0.35">
+    <path d="M0 -6 Q0 0 6 0 Q0 0 0 6 Q0 0 -6 0 Q0 0 0 -6 Z" />
+  </g>
+  <g transform="translate(468, 192)" fill="#9E4759" opacity="0.35">
+    <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" />
+  </g>
+</svg>
