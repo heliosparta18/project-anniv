@@ -1,10 +1,6 @@
 import {
   Heart,
   Sparkles,
-  Calendar,
-  MapPin,
-  Clock,
-  Camera,
   Mail,
   Ticket,
   CheckSquare,
@@ -13,16 +9,15 @@ import { AppShell } from './components/layout/AppShell';
 import { Navbar } from './components/layout/Navbar';
 import { HeroSection } from './components/hero/HeroSection';
 import { VinylPlayer } from './components/audio/VinylPlayer';
+import { TimelineSection } from './components/timeline/TimelineSection';
+import { PolaroidGallery } from './components/gallery/PolaroidGallery';
 import {
   coupleProfile,
-  milestones,
-  polaroids,
   loveLetter,
   loveReasons,
   coupons,
   bucketListItems,
 } from './data/anniversaryData';
-import { getPlaceholderPhoto } from './utils/placeholderGenerator';
 
 export function App() {
   return (
@@ -45,114 +40,13 @@ export function App() {
       {/* 1. Hero Section with Live Gregorian Counter */}
       <HeroSection />
 
-      {/* 2. Timeline Landmark Section */}
-      <section id="timeline" className="w-full py-16 border-t border-anniv-borderSubtle/60 flex flex-col items-center scroll-mt-20">
-        <div className="w-full max-w-4xl text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-anniv-peach text-anniv-rose border border-anniv-borderSubtle text-xs uppercase tracking-wider font-semibold mb-3 shadow-warm-sm">
-            <Clock className="w-3.5 h-3.5" />
-            <span>Coming in Chapter 3 &bull; Milestone Timeline</span>
-          </div>
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-anniv-cocoa mb-3">
-            Our Story &amp; Milestones
-          </h2>
-          <p className="text-anniv-secondary text-sm sm:text-base max-w-xl mx-auto">
-            From our nervous first coffee meeting in Senopati to 365 days of laughter and adventures together.
-          </p>
-        </div>
+      {/* 2. Interactive Relationship Journey Timeline */}
+      <TimelineSection />
 
-        {/* Sample Milestone Preview Card with Fallback Image */}
-        {milestones[0] && (
-          <div className="w-full max-w-xl bg-anniv-card rounded-2xl p-6 border border-anniv-borderSubtle shadow-warm-md flex flex-col gap-4 text-left relative">
-            <div className="washi-tape absolute -top-2.5 left-8" />
-            <div className="aspect-[3/2] w-full rounded-xl overflow-hidden bg-anniv-peach/40 border border-anniv-borderSubtle/50">
-              <img
-                src={milestones[0].image}
-                alt={milestones[0].title}
-                onError={(e) => {
-                  e.currentTarget.onerror = null;
-                  e.currentTarget.src = getPlaceholderPhoto(milestones[0].id);
-                }}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <div className="flex items-center gap-3 text-xs text-anniv-truffle font-medium mb-1">
-                <span className="flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5 text-anniv-rose" />
-                  {milestones[0].date}
-                </span>
-                {milestones[0].location && (
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-anniv-rose" />
-                    {milestones[0].location}
-                  </span>
-                )}
-              </div>
-              <h3 className="font-serif text-xl font-bold text-anniv-cocoa mb-2">
-                {milestones[0].title}
-              </h3>
-              <p className="text-sm text-anniv-secondary leading-relaxed line-clamp-3">
-                {milestones[0].description}
-              </p>
-            </div>
-            <div className="pt-2 border-t border-anniv-borderSubtle/50 text-xs text-anniv-truffle text-center">
-              Previewing Chapter 1 of 5 &bull; Full vertical spine arriving in Chapter 3
-            </div>
-          </div>
-        )}
-      </section>
+      {/* 3. Scrapbook Polaroid Flip Gallery & Lightbox Modal */}
+      <PolaroidGallery />
 
-      {/* 3. Memories / Gallery Landmark Section */}
-      <section id="gallery" className="w-full py-16 border-t border-anniv-borderSubtle/60 flex flex-col items-center scroll-mt-20">
-        <div className="w-full max-w-4xl text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-anniv-peach text-anniv-rose border border-anniv-borderSubtle text-xs uppercase tracking-wider font-semibold mb-3 shadow-warm-sm">
-            <Camera className="w-3.5 h-3.5" />
-            <span>Coming in Chapter 3 &bull; Polaroid Scrapbook</span>
-          </div>
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-anniv-cocoa mb-3">
-            Moments Frozen in Time
-          </h2>
-          <p className="text-anniv-secondary text-sm sm:text-base max-w-xl mx-auto">
-            Organic polaroid cards with washi tape ribbons and handwritten secret notes on the back.
-          </p>
-        </div>
-
-        {/* Sample Polaroid Preview Card with Fallback Image */}
-        {polaroids[0] && (
-          <div className="flex flex-col items-center justify-center pt-2 w-full max-w-xs">
-            <div
-              className="polaroid-frame w-full relative cursor-pointer"
-              style={{ transform: `rotate(${polaroids[0].rotation}deg)` }}
-            >
-              <div className="washi-tape absolute -top-3 left-1/2 -translate-x-1/2" />
-              <div className="aspect-square w-full rounded-xs overflow-hidden bg-anniv-peach/40 mb-3 border border-anniv-borderSubtle/40">
-                <img
-                  src={polaroids[0].url}
-                  alt={polaroids[0].caption}
-                  onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = getPlaceholderPhoto(polaroids[0].id);
-                  }}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <p className="font-handwriting text-xl sm:text-2xl text-center text-anniv-cocoa font-bold">
-                {polaroids[0].caption}
-              </p>
-              <p className="text-center text-xs text-anniv-truffle mt-0.5">
-                {polaroids[0].location} &bull; {polaroids[0].date}
-              </p>
-            </div>
-            <p className="mt-6 text-xs text-anniv-truffle text-center">
-              Previewing 1 of 6 polaroids &bull; 3D card-flip handwritten notes &amp; lightbox modal arriving in Chapter 3
-            </p>
-          </div>
-        )}
-      </section>
-
-      {/* 4. Love Letter Landmark Section */}
+      {/* 4. Love Letter Landmark Section (Stage 4) */}
       <section id="letter" className="w-full py-16 border-t border-anniv-borderSubtle/60 flex flex-col items-center scroll-mt-20">
         <div className="w-full max-w-4xl text-center mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-anniv-peach text-anniv-rose border border-anniv-borderSubtle text-xs uppercase tracking-wider font-semibold mb-3 shadow-warm-sm">
@@ -184,7 +78,7 @@ export function App() {
         </div>
       </section>
 
-      {/* 5. Reasons Landmark Section */}
+      {/* 5. Reasons Landmark Section (Stage 4) */}
       <section id="reasons" className="w-full py-16 border-t border-anniv-borderSubtle/60 flex flex-col items-center scroll-mt-20">
         <div className="w-full max-w-4xl text-center mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-anniv-peach text-anniv-rose border border-anniv-borderSubtle text-xs uppercase tracking-wider font-semibold mb-3 shadow-warm-sm">
@@ -221,7 +115,7 @@ export function App() {
         )}
       </section>
 
-      {/* 6. Vouchers Landmark Section */}
+      {/* 6. Vouchers Landmark Section (Stage 4) */}
       <section id="coupons" className="w-full py-16 border-t border-anniv-borderSubtle/60 flex flex-col items-center scroll-mt-20">
         <div className="w-full max-w-4xl text-center mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-anniv-peach text-anniv-rose border border-anniv-borderSubtle text-xs uppercase tracking-wider font-semibold mb-3 shadow-warm-sm">
@@ -264,7 +158,7 @@ export function App() {
         )}
       </section>
 
-      {/* 7. Bucket List Landmark Section */}
+      {/* 7. Bucket List Landmark Section (Stage 4) */}
       <section id="bucket-list" className="w-full py-16 border-t border-anniv-borderSubtle/60 flex flex-col items-center scroll-mt-20">
         <div className="w-full max-w-4xl text-center mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-anniv-peach text-anniv-rose border border-anniv-borderSubtle text-xs uppercase tracking-wider font-semibold mb-3 shadow-warm-sm">

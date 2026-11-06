@@ -1,0 +1,170 @@
+{
+  "timestamp": "2026-11-06T01:21:27.920Z",
+  "rapidFlipResult": {
+    "frontVisible": true,
+    "bodyOverflow": ""
+  },
+  "rapidLifecycleResult": {
+    "cyclesCompleted": 50,
+    "openPassCount": 50,
+    "closePassCount": 50,
+    "finalBodyOverflow": ""
+  },
+  "allMeasurements": [
+    {
+      "name": "Modal Close Button",
+      "selector": "button[aria-label=\"Close photo preview\"]",
+      "width": 44,
+      "height": 44,
+      "meets44x44": true
+    },
+    {
+      "name": "Modal Floating Prev Button",
+      "selector": "button[aria-label=\"Previous photo\"]",
+      "width": 44,
+      "height": 44,
+      "meets44x44": true
+    },
+    {
+      "name": "Modal Floating Next Button",
+      "selector": "button[aria-label=\"Next photo\"]",
+      "width": 44,
+      "height": 44,
+      "meets44x44": true
+    },
+    {
+      "name": "Modal Footer Prev Button",
+      "selector": "button[aria-label=\"Previous photo button\"]",
+      "width": 69.6,
+      "height": 44,
+      "meets44x44": true
+    },
+    {
+      "name": "Modal Footer Next Button",
+      "selector": "button[aria-label=\"Next photo button\"]",
+      "width": 71,
+      "height": 44,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Card Expand Button #1",
+      "selector": "button[aria-label*=\"View fullscreen\"]",
+      "width": 45.7,
+      "height": 45.7,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Card Expand Button #2",
+      "selector": "button[aria-label*=\"View fullscreen\"]",
+      "width": 45.4,
+      "height": 45.4,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Card Expand Button #3",
+      "selector": "button[aria-label*=\"View fullscreen\"]",
+      "width": 45.1,
+      "height": 45.1,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Card Expand Button #4",
+      "selector": "button[aria-label*=\"View fullscreen\"]",
+      "width": 45.8,
+      "height": 45.8,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Card Expand Button #5",
+      "selector": "button[aria-label*=\"View fullscreen\"]",
+      "width": 45.4,
+      "height": 45.4,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Card Expand Button #6",
+      "selector": "button[aria-label*=\"View fullscreen\"]",
+      "width": 45.1,
+      "height": 45.1,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Flip Front Button #1",
+      "selector": "button[aria-label=\"Flip card to read handwritten note on back\"]",
+      "width": 278.5,
+      "height": 54.6,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Flip Front Button #2",
+      "selector": "button[aria-label=\"Flip card to read handwritten note on back\"]",
+      "width": 278.2,
+      "height": 52.7,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Flip Front Button #3",
+      "selector": "button[aria-label=\"Flip card to read handwritten note on back\"]",
+      "width": 278,
+      "height": 50.8,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Flip Front Button #4",
+      "selector": "button[aria-label=\"Flip card to read handwritten note on back\"]",
+      "width": 278.6,
+      "height": 55.6,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Flip Front Button #5",
+      "selector": "button[aria-label=\"Flip card to read handwritten note on back\"]",
+      "width": 278.3,
+      "height": 53.2,
+      "meets44x44": true
+    },
+    {
+      "name": "Polaroid Flip Front Button #6",
+      "selector": "button[aria-label=\"Flip card to read handwritten note on back\"]",
+      "width": 278.1,
+      "height": 51.2,
+      "meets44x44": true
+    },
+    {
+      "name": "Gallery Category Tab #1",
+      "selector": "#gallery button[role=\"tab\"]",
+      "width": 135.5,
+      "height": 46.2,
+      "meets44x44": true
+    },
+    {
+      "name": "Gallery Category Tab #2",
+      "selector": "#gallery button[role=\"tab\"]",
+      "width": 141.5,
+      "height": 44,
+      "meets44x44": true
+    },
+    {
+      "name": "Gallery Category Tab #3",
+      "selector": "#gallery button[role=\"tab\"]",
+      "width": 132.3,
+      "height": 44,
+      "meets44x44": true
+    },
+    {
+      "name": "Gallery Category Tab #4",
+      "selector": "#gallery button[role=\"tab\"]",
+      "width": 140.5,
+      "height": 44,
+      "meets44x44": true
+    },
+    {
+      "name": "Gallery Category Tab #5",
+      "selector": "#gallery button[role=\"tab\"]",
+      "width": 137.4,
+      "height": 44,
+      "meets44x44": true
+    }
+  ],
+  "allPassed": true
+}
