@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, Calendar, MapPin, Heart } from 'lucide-react';
 import type { PolaroidPhoto } from '../../types/anniversary';
-import { getPlaceholderPhoto } from '../../utils/placeholderGenerator';
 
 export interface LightboxModalProps {
   /** The photo currently being viewed (null if closed) */
@@ -231,17 +230,18 @@ export function LightboxModal({
           </button>
         </div>
 
-        {/* Image Frame Container with Next/Prev Floating Buttons */}
-        <div className="relative aspect-square sm:aspect-[4/3] w-full rounded-xl overflow-hidden bg-anniv-peach/30 border border-anniv-borderSubtle/60 mb-4 group">
-          <img
-            src={currentPhoto.url}
-            alt={currentPhoto.caption}
-            onError={(e) => {
-              e.currentTarget.onerror = null;
-              e.currentTarget.src = getPlaceholderPhoto(currentPhoto.id);
-            }}
-            className="w-full h-full object-contain sm:object-cover"
-          />
+        {/* Aesthetic Typography Memory Parchment Container with Floating Nav Buttons */}
+        <div className="relative w-full rounded-2xl bg-gradient-to-b from-[#FAF7F2] to-anniv-peach/35 border border-anniv-borderSubtle/80 p-6 sm:p-8 mb-4 min-h-[200px] sm:min-h-[240px] flex flex-col justify-between shadow-warm-sm group">
+          {/* Subtle Decorative Parchment Stamp Header */}
+          <div className="flex items-center justify-between border-b border-anniv-borderSubtle/50 pb-2 mb-3">
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-anniv-rose">
+              <Heart className="w-3.5 h-3.5 fill-anniv-rose" />
+              <span>Memori Scrapbook</span>
+            </span>
+            <span className="text-xs text-anniv-truffle font-serif italic">
+              Chapter &bull; Personal Note
+            </span>
+          </div>
 
           {/* Floating Left / Previous Button (>= 44x44px touch target) */}
           {hasNavigation && (
@@ -249,7 +249,7 @@ export function LightboxModal({
               type="button"
               onClick={handlePrev}
               aria-label="Previous photo"
-              className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] w-11 h-11 flex items-center justify-center rounded-full bg-anniv-card/90 hover:bg-anniv-card text-anniv-cocoa hover:text-anniv-rose focus-visible:ring-2 focus-visible:ring-anniv-rose shadow-warm-md transition-all duration-200 cursor-pointer"
+              className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] w-11 h-11 flex items-center justify-center rounded-full bg-anniv-card/90 hover:bg-anniv-card text-anniv-cocoa hover:text-anniv-rose focus-visible:ring-2 focus-visible:ring-anniv-rose shadow-warm-md transition-all duration-200 cursor-pointer z-10"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -261,11 +261,31 @@ export function LightboxModal({
               type="button"
               onClick={handleNext}
               aria-label="Next photo"
-              className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] w-11 h-11 flex items-center justify-center rounded-full bg-anniv-card/90 hover:bg-anniv-card text-anniv-cocoa hover:text-anniv-rose focus-visible:ring-2 focus-visible:ring-anniv-rose shadow-warm-md transition-all duration-200 cursor-pointer"
+              className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] w-11 h-11 flex items-center justify-center rounded-full bg-anniv-card/90 hover:bg-anniv-card text-anniv-cocoa hover:text-anniv-rose focus-visible:ring-2 focus-visible:ring-anniv-rose shadow-warm-md transition-all duration-200 cursor-pointer z-10"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
           )}
+
+          {/* Expanded Memory Story Body */}
+          <div className="px-6 sm:px-12 py-3 text-center select-text">
+            <p className="font-serif italic text-xs sm:text-sm text-anniv-rose mb-2">
+              &ldquo;Catatan Manis Perjalanan Kita&rdquo;
+            </p>
+            <p className="font-handwriting text-2xl sm:text-3xl text-anniv-cocoa leading-relaxed">
+              &ldquo;{currentPhoto.note || currentPhoto.caption}&rdquo;
+            </p>
+          </div>
+
+          {/* Bottom Card Footer Details */}
+          <div className="pt-3 border-t border-anniv-borderSubtle/50 flex items-center justify-between text-xs text-anniv-truffle">
+            <span className="font-medium text-anniv-secondary">
+              {currentPhoto.location}
+            </span>
+            <span className="font-serif italic text-anniv-rose font-bold">
+              D &amp; D 💕
+            </span>
+          </div>
         </div>
 
         {/* Polaroid Caption */}

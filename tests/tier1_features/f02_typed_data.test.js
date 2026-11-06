@@ -14,8 +14,8 @@ import {
 
 test('Feature 2 - Centralized Typed Data: CoupleProfile Production Data Validation', () => {
   assert.ok(coupleProfile, 'coupleProfile must be exported');
-  assert.strictEqual(coupleProfile.partnerName, 'Alya', 'Partner name must be Alya');
-  assert.strictEqual(coupleProfile.myName, 'Rama', 'Author name must be Rama');
+  assert.strictEqual(coupleProfile.partnerName, 'Dinda', 'Partner name must be Dinda');
+  assert.strictEqual(coupleProfile.myName, 'Daffa', 'Author name must be Daffa');
   assert.ok(typeof coupleProfile.anniversaryDate === 'string', 'anniversaryDate must be a string');
   assert.ok(!isNaN(Date.parse(coupleProfile.anniversaryDate)), 'anniversaryDate must be a valid ISO date');
   assert.ok(coupleProfile.tagline.length > 0, 'tagline must not be empty');
@@ -72,7 +72,7 @@ test('Feature 2 - Centralized Typed Data: Love Letter Production Contract Valida
   const fullText = loveLetter.paragraphs.join(' ');
   assert.ok(fullText.length >= 300, 'Love letter must contain substantive text (>300 chars)');
   assert.ok(typeof loveLetter.closing === 'string' && loveLetter.closing.length > 0, 'Closing required');
-  assert.ok(loveLetter.signature.includes('Rama'), 'Signature must contain Rama');
+  assert.ok(loveLetter.signature.includes('Daffa'), 'Signature must contain Daffa');
   assert.ok(typeof loveLetter.sealText === 'string' && loveLetter.sealText.length > 0, 'Wax seal monogram required');
   assert.strictEqual(anniversaryData.loveLetter, loveLetter);
 });
@@ -181,7 +181,7 @@ test('Feature 2 - Centralized Typed Data: Gen-Z Copy Guardrails on Real Producti
     );
   }
 
-  // Ensure couple names Rama & Alya are actively referenced in copy
-  assert.ok(corpus.includes('Alya'), 'Production copy must mention partner name Alya');
-  assert.ok(corpus.includes('Rama'), 'Production copy must mention author name Rama');
+  // Ensure couple names Daffa & Dinda are actively referenced in copy
+  assert.ok(corpus.includes('Dinda'), 'Production copy must mention partner name Dinda');
+  assert.ok(corpus.includes('Daffa'), 'Production copy must mention author name Daffa');
 });

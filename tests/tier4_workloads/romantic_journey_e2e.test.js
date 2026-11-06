@@ -49,8 +49,8 @@ test('Tier 4 - Real-World Romantic Journey: Full User Journey Simulation', async
     // ========================================================================
     // SCENE 1: ARRIVAL AT HERO SECTION & LIVE GREGORIAN COUNTER
     // ========================================================================
-    assert.strictEqual(coupleProfile.partnerName, 'Alya', 'Partner name must be Alya');
-    assert.strictEqual(coupleProfile.myName, 'Rama', 'Author name must be Rama');
+    assert.strictEqual(coupleProfile.partnerName, 'Dinda', 'Partner name must be Dinda');
+    assert.strictEqual(coupleProfile.myName, 'Daffa', 'Author name must be Daffa');
 
     // Calculate live Gregorian elapsed time from anniversary date to now
     const counterResult = calculateGregorianDifference(coupleProfile.anniversaryDate);

@@ -38,14 +38,14 @@ test('Feature 10 - Lightbox Modal: Open on Photo Click with Full Metadata Presen
     'LightboxModal backdrop must feature romantic aesthetic backdrop-blur'
   );
 
-  // 4. Image rendering with resilient fallback
+  // 4. Clean aesthetic typography card container (R1: no placeholder images)
   assert.ok(
-    code.includes('<img') && (code.includes('currentPhoto.url') || code.includes('photo.url')),
-    'LightboxModal must render photo image tag with photo url'
+    !code.includes('<img'),
+    'LightboxModal must remove placeholder img tags per R1 requirement'
   );
   assert.ok(
-    code.includes('onError=') && code.includes('getPlaceholderPhoto'),
-    'LightboxModal must bind onError fallback using getPlaceholderPhoto generator'
+    code.includes('font-handwriting') || code.includes('font-serif'),
+    'LightboxModal must present content with clean aesthetic typography'
   );
 
   // 5. Full metadata display: caption, date, location, handwritten note

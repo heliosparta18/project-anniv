@@ -36,10 +36,10 @@ test('Feature 5 - Hero Section: Couple Names Display and Landmark Structure', ()
     'HeroSection must feature editorial serif typography (font-serif) for romantic header styling'
   );
 
-  // 5. Couple names rendering logic (Rama & Alya)
+  // 5. Couple names rendering logic (Daffa & Dinda)
   assert.ok(
     (code.includes('myName') && code.includes('partnerName')) ||
-    (code.includes('Rama') && code.includes('Alya')),
+    (code.includes('Daffa') && code.includes('Dinda')),
     'HeroSection must render both couple names'
   );
   assert.ok(

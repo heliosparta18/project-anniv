@@ -93,7 +93,7 @@ test('Milestone 4 Challenger: Envelope 3D State Machine Transitions & Rendering'
     );
 
     assert.ok(sealedHtml.includes('Surat Khusus Untuk:'), 'Sealed envelope must render addressee label');
-    assert.ok(sealedHtml.includes('Alya Sayang'), 'Sealed envelope must render recipient name');
+    assert.ok(sealedHtml.includes('Dinda Sayang'), 'Sealed envelope must render recipient name');
     assert.ok(sealedHtml.includes('1st Anniv Post'), 'Sealed envelope must render postal stamp');
     assert.ok(sealedHtml.includes('Pecahkan segel lilin'), 'Sealed envelope must render wax seal CTA');
     assert.ok(!sealedHtml.includes('Lipat &amp; Segel Kembali'), 'Sealed envelope must NOT render reseal button');
@@ -114,7 +114,7 @@ test('Milestone 4 Challenger: Envelope 3D State Machine Transitions & Rendering'
     // 3. Wax Seal Unsealing State & Crack Overlay
     const breakingWaxHtml = ReactDOMServer.renderToString(
       React.createElement(WaxSeal, {
-        sealText: 'R & A',
+        sealText: 'D & D',
         isBreaking: true,
         isBroken: false
       })
@@ -126,7 +126,7 @@ test('Milestone 4 Challenger: Envelope 3D State Machine Transitions & Rendering'
     // 4. Broken Wax Seal State
     const brokenWaxHtml = ReactDOMServer.renderToString(
       React.createElement(WaxSeal, {
-        sealText: 'R & A',
+        sealText: 'D & D',
         isBreaking: false,
         isBroken: true
       })

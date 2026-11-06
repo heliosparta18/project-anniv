@@ -427,7 +427,7 @@ test('Tier 5 - Adversarial Vinyl Player: Turntable State Machine & Slider Hit Ta
   // 6. Strict Zero Em-Dash Guardrail in VinylPlayer.tsx
   assert.ok(!code.includes('\u2014'), 'VinylPlayer.tsx must not contain unicode em-dash');
   assert.ok(!code.includes('&mdash;'), 'VinylPlayer.tsx must not contain &mdash;');
-  assert.ok(code.includes('~ Rama for Alya 💕'), 'Uses romantic tilde signature');
+  assert.ok(code.includes('~ Daffa for Dinda 💕'), 'Uses romantic tilde signature');
 });
 
 // =============================================================================

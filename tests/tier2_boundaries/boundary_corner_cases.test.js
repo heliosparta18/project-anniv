@@ -243,15 +243,15 @@ test('Tier 2 - Boundary: Extreme Maximum String Lengths', async () => {
     React.createElement(ParchmentLetter, {
       letter: {
         date: '4 Mei 2025',
-        salutation: 'Alya Sayang,',
+        salutation: 'Dinda Sayang,',
         opening: 'Surat Panjang Untukmu',
         paragraphs: ['Surat Panjang '.repeat(800)],
         closing: 'Selamanya bersamamu,',
-        signature: 'Rama untuk Alya',
+        signature: 'Daffa untuk Dinda',
       },
     })
   );
-  assert.ok(letterHtml.includes('Rama untuk Alya'), 'Parchment letter renders signature');
+  assert.ok(letterHtml.includes('Daffa untuk Dinda'), 'Parchment letter renders signature');
 
   // 5. SVG markup generation under extreme title length
   const longSvg = generateSvgMarkup({

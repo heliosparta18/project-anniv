@@ -227,8 +227,8 @@ test('Feature 11 - Love Letter: Parchment Unfolding and Heartfelt Typography', (
   // 4. Production loveLetter data validation
   assert.strictEqual(typeof loveLetter.salutation, 'string');
   assert.ok(loveLetter.paragraphs.length >= 3, 'Production love letter must contain at least 3 paragraphs');
-  assert.ok(loveLetter.signature.includes('Rama'), 'Production signature must contain author Rama');
-  assert.strictEqual(loveLetter.sealText, 'R & A', 'Production seal text must be R & A');
+  assert.ok(loveLetter.signature.includes('Daffa'), 'Production signature must contain author Daffa');
+  assert.strictEqual(loveLetter.sealText, 'D & D', 'Production seal text must be D & D');
 
   // 5. Re-seal button touch target verification
   const interactive = extractInteractiveElements(parchmentCode);

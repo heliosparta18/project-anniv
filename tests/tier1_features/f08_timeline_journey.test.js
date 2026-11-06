@@ -160,18 +160,18 @@ test('Feature 8 - Journey Timeline: Category Badges and Soft Styling', () => {
     'TimelineCard must apply signature warm cocoa shadows (shadow-warm-md or shadow-warm-lg)'
   );
 
-  // 4. Image thumbnail and fallback generator integration
+  // 4. Aesthetic typography card presentation (R1: clean typography, no placeholder images)
   assert.ok(
-    cardCode.includes('getPlaceholderPhoto'),
-    'TimelineCard must import and integrate getPlaceholderPhoto fallback generator'
+    !cardCode.includes('<img'),
+    'TimelineCard must remove placeholder img tags per R1 requirement'
   );
   assert.ok(
-    cardCode.includes('onError'),
-    'TimelineCard image must provide onError fallback handler to guarantee zero 404s'
+    cardCode.includes('font-serif'),
+    'TimelineCard must style milestone headings with editorial serif typography'
   );
   assert.ok(
-    cardCode.includes('loading="lazy"'),
-    'TimelineCard image must specify loading="lazy" for optimal mobile loading performance'
+    cardCode.includes('font-sans'),
+    'TimelineCard must present narrative with clean readable sans typography'
   );
 
   // 5. Empty state support when category filter matches 0 items

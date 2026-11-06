@@ -116,7 +116,7 @@ test('Tier 5 Adversarial: Letter Module Component Boundaries and Invariants', as
 
   // 1.1 WaxSeal default props and custom text
   const defaultSealHtml = ReactDOMServer.renderToString(React.createElement(WaxSeal));
-  assert.ok(defaultSealHtml.includes('R &amp; A') || defaultSealHtml.includes('R & A'), 'WaxSeal must render default sealText');
+  assert.ok(defaultSealHtml.includes('D &amp; D') || defaultSealHtml.includes('D & D'), 'WaxSeal must render default sealText');
   assert.ok(defaultSealHtml.includes('min-h-[44px] min-w-[44px]'), 'WaxSeal button must enforce 44x44px minimum touch target');
 
   // 1.2 WaxSeal broken state
@@ -137,7 +137,7 @@ test('Tier 5 Adversarial: Letter Module Component Boundaries and Invariants', as
   const sealedEnvHtml = ReactDOMServer.renderToString(React.createElement(VirtualEnvelope));
   assert.ok(sealedEnvHtml.includes('Amplop surat cinta tersegel'), 'Sealed envelope must have accessible region label');
   assert.ok(sealedEnvHtml.includes('Anniv Post'), 'Envelope must render postal stamp badge');
-  assert.ok(sealedEnvHtml.includes('Alya Sayang'), 'Envelope must render addressee label');
+  assert.ok(sealedEnvHtml.includes('Dinda Sayang'), 'Envelope must render addressee label');
   assert.ok(sealedEnvHtml.includes('aspect-[16/11]'), 'Envelope must specify 16/11 aspect ratio for mobile');
 
   // 1.5 VirtualEnvelope defaultOpen=true renders ParchmentLetter

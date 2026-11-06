@@ -223,8 +223,8 @@ check(
   'VinylPlayer does not contain unicode em-dash (—)'
 );
 check(
-  vinylPlayerContent.includes('~ Rama for Alya 💕'),
-  'VinylPlayer uses casual handwritten tilde "~ Rama for Alya 💕"'
+  vinylPlayerContent.includes('~ Daffa for Dinda 💕'),
+  'VinylPlayer uses casual handwritten tilde "~ Daffa for Dinda 💕"'
 );
 
 // 4.3: Full src/ sweep for em-dash violations

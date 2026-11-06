@@ -159,10 +159,10 @@ test('Feature 9 - Polaroid Gallery: 3D Card Flip to Handwritten Notes on Back', 
     'PolaroidCard back face must render photo note content'
   );
 
-  // 4. Image fallback with placeholder generator
+  // 4. Aesthetic typography memory frame presentation (R1: clean typography, no placeholder images)
   assert.ok(
-    cardCode.includes('onError') || cardCode.includes('getPlaceholderPhoto'),
-    'PolaroidCard must handle image load error with aesthetic placeholder fallback'
+    !cardCode.includes('<img'),
+    'PolaroidCard must remove placeholder img tags per R1 requirement'
   );
 
   // 5. Touch target invariants on interactive buttons

@@ -205,7 +205,7 @@ test('Feature 7 - Vinyl Audio Player: Track Switcher Cycles Music Playlist', () 
     'VinylPlayer must provide toggleable romantic notes modal/tooltip'
   );
   assert.ok(
-    vinylCode.includes('Rama for Alya') || vinylCode.includes('Why This Song Matters'),
+    vinylCode.includes('Daffa for Dinda') || vinylCode.includes('Why This Song Matters'),
     'Romantic note modal must feature personal Gen-Z heartfelt note'
   );
 
