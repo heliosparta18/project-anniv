@@ -22,8 +22,8 @@
 | # | Name | Scope | Dependencies | Status |
 |---|------|-------|-------------|--------|
 | M1 | Personalization & Aesthetic Cards | Couple names (Daffa & Dinda), remove placeholder SVGs, implement aesthetic typography card layouts in Timeline & Gallery, sync test assertions | none | DONE |
-| M2 | Conversational Indonesian Copywriting | Rewrite all website messages, love letter, reasons, coupons, bucket list, and UI labels into relaxed "bahasa santai" with zero em-dashes | M1 | IN_PROGRESS |
-| M3 | Background Audio Player & Controls | Integrate YouTube track o25_Tn8BnFM into floating VinylPlayer with robust play/pause and synth fallback | M1 | PLANNED |
+| M2 | Conversational Indonesian Copywriting | Rewrite all website messages, love letter, reasons, coupons, bucket list, and UI labels into relaxed "bahasa santai" with zero em-dashes | M1 | DONE |
+| M3 | Background Audio Player & Controls | Integrate YouTube track o25_Tn8BnFM into floating VinylPlayer with robust play/pause and synth fallback | M1 | IN_PROGRESS |
 | M4 | Final E2E Pass & Coverage Hardening | Run build, typecheck, lint, all 24+ test suites (Tiers 1-5), and verify runtime dev server | M1, M2, M3 | PLANNED |
 
 ## Interface Contracts
