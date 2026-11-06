@@ -1,6 +1,5 @@
 import type { Milestone } from '../../types/anniversary';
 import { Calendar, MapPin, Heart, Sparkles, Coffee, Car } from 'lucide-react';
-import { getPlaceholderPhoto } from '../../utils/placeholderGenerator';
 
 export interface CategoryStyle {
   label: string;
@@ -86,22 +85,6 @@ export function TimelineCard({
           className="washi-tape absolute -top-2.5 left-6 sm:left-8 pointer-events-none"
           aria-hidden="true"
         />
-
-        {/* Milestone Photo Thumbnail with Resilient Error Fallback */}
-        {milestone.image && (
-          <div className="aspect-[16/10] w-full rounded-xl overflow-hidden bg-anniv-peach/40 border border-anniv-borderSubtle/60 mb-4 relative">
-            <img
-              src={milestone.image}
-              alt={milestone.title}
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = getPlaceholderPhoto(milestone.id);
-              }}
-              className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
-              loading="lazy"
-            />
-          </div>
-        )}
 
         {/* Header Metadata: Category Badge and Date */}
         <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">

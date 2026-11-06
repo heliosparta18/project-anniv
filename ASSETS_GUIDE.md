@@ -20,8 +20,8 @@ Buka file **`src/data/anniversaryData.ts`**, temukan bagian `coupleProfile`:
 
 ```typescript
 export const coupleProfile: CoupleProfile = {
-  partnerName: 'Alya',              // Nama panggilan pasanganmu
-  myName: 'Rama',                   // Nama panggilan kamu
+  partnerName: 'Dinda',             // Nama panggilan pasanganmu
+  myName: 'Daffa',                  // Nama panggilan kamu
   anniversaryDate: '2025-05-04T00:00:00', // Format ISO: YYYY-MM-DDTHH:mm:ss
   tagline: '365 Days of Loving You',     // Judul utama di Hero section
   subtagline: 'Still my favorite person to do absolutely nothing with. Happy 1st anniversary, sayang.',
@@ -101,7 +101,7 @@ Edit bagian `loveLetter`:
 - `paragraphs`: Paragraf isi surat (dalam bentuk array teks, kamu bisa tambah atau kurangi paragraf).
 - `closing`: Kalimat penutup cinta.
 - `signature`: Tanda tangan namamu.
-- `sealText`: Inisial stempel lilin pada amplop (contoh: *"R & A"*).
+- `sealText`: Inisial stempel lilin pada amplop (contoh: *"D & D"*).
 
 ### B. 12 Alasan Kenapa Aku Sayang Kamu (`loveReasons`)
 Setiap kartu memiliki teks alasan, kategori (`quirks`, `habits`, `memories`, `feelings`), dan ikon Lucide (`Smile`, `Sparkles`, `Heart`, `Coffee`, dll).

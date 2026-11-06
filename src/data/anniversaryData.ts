@@ -17,8 +17,8 @@ import type {
 } from '../types/anniversary';
 
 export const coupleProfile: CoupleProfile = {
-  partnerName: 'Alya',
-  myName: 'Rama',
+  partnerName: 'Dinda',
+  myName: 'Daffa',
   anniversaryDate: '2022-11-10T00:00:00', // Start of relationship: 10 November 2022 (4 Years)
   tagline: '4 Years of Loving You',
   subtagline: '1,460+ hari bersama, dan kamu masih jadi orang favoritku setiap hari. Happy 4th anniversary, sayang.',
@@ -153,9 +153,9 @@ export const loveLetter: LoveLetter = {
     "4 tahun ini seru banget (1.460+ hari yang luar biasa), and I can't wait for all the new adventures, silly jokes, cozy dates, and quiet moments we are going to share together in the years ahead.",
   ],
   closing: 'Happy anniversary, love. I love you more than words could ever say.',
-  signature: 'Forever & always yours, Rama',
+  signature: 'Forever & always yours, Daffa',
   date: '10 November 2026',
-  sealText: 'R & A',
+  sealText: 'D & D',
 };
 
 export const loveReasons: LoveReason[] = [

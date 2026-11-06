@@ -10,7 +10,7 @@ export interface WaxSealProps {
 }
 
 export function WaxSeal({
-  sealText = 'R & A',
+  sealText = 'D & D',
   isBroken = false,
   isBreaking = false,
   onBreak,

@@ -313,7 +313,7 @@ export const VinylPlayer: React.FC<VinylPlayerProps> = ({
                 <button
                   type="button"
                   onClick={() => toggleNotesModal()}
-                  aria-label="View Rama's romantic note for this track"
+                  aria-label="View Daffa's romantic note for this track"
                   className="inline-flex items-center gap-1 text-xs text-anniv-rose hover:text-anniv-roseHover font-semibold transition-colors cursor-pointer min-h-[44px] min-w-[44px] px-2 py-1"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
@@ -491,7 +491,7 @@ export const VinylPlayer: React.FC<VinylPlayerProps> = ({
             </blockquote>
 
             <div className="text-right font-serif text-sm text-anniv-rose font-bold">
-              ~ Rama for Alya 💕
+              ~ Daffa for Dinda 💕
             </div>
           </div>
         </div>

@@ -64,7 +64,7 @@ export function VirtualEnvelope({
                 Surat Khusus Untuk:
               </p>
               <p className="font-handwriting text-2xl sm:text-3xl font-bold text-anniv-cocoa">
-                Alya Sayang ❤️
+                Dinda Sayang ❤️
               </p>
             </div>
 
@@ -115,7 +115,7 @@ export function VirtualEnvelope({
             {/* Wax Seal Centered on the Apex of the Top Flap */}
             <div className="absolute top-[48%] sm:top-[47%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
               <WaxSeal
-                sealText={letter.sealText || 'R & A'}
+                sealText={letter.sealText || 'D & D'}
                 isBreaking={isUnsealing}
                 isBroken={isOpen}
                 onBreak={handleBreakSeal}

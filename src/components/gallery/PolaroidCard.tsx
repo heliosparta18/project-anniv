@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { RotateCw, Maximize2, MapPin, Calendar, Heart } from 'lucide-react';
+import { RotateCw, Maximize2, MapPin, Calendar, Heart, BookOpen } from 'lucide-react';
 import type { PolaroidPhoto } from '../../types/anniversary';
-import { getPlaceholderPhoto } from '../../utils/placeholderGenerator';
 
 export interface PolaroidCardProps {
   photo: PolaroidPhoto;
@@ -11,7 +10,6 @@ export interface PolaroidCardProps {
 
 export function PolaroidCard({ photo, onPhotoClick, className = '' }: PolaroidCardProps) {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
-  const [imgError, setImgError] = useState<boolean>(false);
 
   const handleFlip = (e?: React.MouseEvent) => {
     if (e) {
@@ -26,8 +24,6 @@ export function PolaroidCard({ photo, onPhotoClick, className = '' }: PolaroidCa
       onPhotoClick(photo);
     }
   };
-
-  const displayImage = imgError ? getPlaceholderPhoto(photo.id) : (photo.url || getPlaceholderPhoto(photo.id));
 
   return (
     <div
@@ -58,16 +54,8 @@ export function PolaroidCard({ photo, onPhotoClick, className = '' }: PolaroidCa
             }`}
             style={{ backfaceVisibility: 'hidden' }}
           >
-            {/* Photo Square Container */}
-            <div className="aspect-square w-full rounded-[2px] overflow-hidden bg-anniv-peach/40 border border-anniv-borderSubtle/40 relative group/photo">
-              <img
-                src={displayImage}
-                alt={photo.caption}
-                onError={() => setImgError(true)}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover/photo:scale-105"
-                loading="lazy"
-              />
-
+            {/* Aesthetic Typography Memory Frame (Clean Typography Container) */}
+            <div className="aspect-square w-full rounded-[2px] bg-gradient-to-b from-[#FAF7F2] to-anniv-peach/30 border border-dashed border-anniv-borderSubtle/80 p-5 flex flex-col justify-between relative group/photo">
               {/* Fullscreen Expand Action Button */}
               <button
                 type="button"
@@ -77,6 +65,30 @@ export function PolaroidCard({ photo, onPhotoClick, className = '' }: PolaroidCa
               >
                 <Maximize2 className="w-4 h-4 text-anniv-cocoa" />
               </button>
+
+              {/* Memory Chapter & Category Pill */}
+              <div className="flex items-center gap-1.5 text-xs text-anniv-truffle">
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/85 border border-anniv-borderSubtle/60 text-[11px] font-semibold text-anniv-rose shadow-warm-xs">
+                  <Heart className="w-3 h-3 fill-anniv-rose" />
+                  <span className="capitalize">{photo.category}</span>
+                </span>
+              </div>
+
+              {/* Heartfelt Pull-Quote / Note Excerpt in Caveat Font */}
+              <div className="my-auto py-2 text-center select-text">
+                <p className="font-serif italic text-xs text-anniv-rose mb-1.5">
+                  &ldquo;A piece of our story&rdquo;
+                </p>
+                <p className="font-handwriting text-xl sm:text-2xl text-anniv-cocoa leading-snug line-clamp-3">
+                  {photo.note || photo.caption}
+                </p>
+              </div>
+
+              {/* Bottom Subtle Prompt */}
+              <div className="flex items-center justify-center gap-1 text-[11px] text-anniv-truffle/70 font-medium tracking-wide">
+                <BookOpen className="w-3 h-3 text-anniv-rose/70" />
+                <span>Memori Spesial</span>
+              </div>
             </div>
 
             {/* Bottom 48px Chin: Handwritten Caption and Metadata */}
@@ -140,7 +152,7 @@ export function PolaroidCard({ photo, onPhotoClick, className = '' }: PolaroidCa
             <div className="pt-3 border-t border-anniv-borderSubtle/50 flex flex-col gap-2">
               <div className="flex items-center justify-between text-xs text-anniv-secondary font-serif italic">
                 <span>Forever &amp; Always</span>
-                <span className="font-handwriting text-lg text-anniv-rose font-bold">R &amp; A 💕</span>
+                <span className="font-handwriting text-lg text-anniv-rose font-bold">D &amp; D 💕</span>
               </div>
 
               <button
