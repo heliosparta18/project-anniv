@@ -374,10 +374,13 @@ export const bucketListItems: BucketListItem[] = [
 export const musicTracks: MusicTrack[] = [
   {
     id: 'track-1',
-    title: 'Until I Found You',
-    artist: 'Stephen Sanchez',
-    src: '/audio/until-i-found-you.mp3',
-    notes: 'Lagu yang pertama kali bikin aku sadar kalau kehadiran kamu di hidup aku itu beneran seindah itu.',
+    title: 'Anugerah Terindah',
+    artist: 'Andmesh Kamaleng',
+    src: '/audio/anugerah-terindah.mp3',
+    youtubeId: 'o25_Tn8BnFM',
+    duration: '3:45',
+    notes: 'Lagu spesial kita dari Andmesh. Tiap dengerin lagu ini, aku langsung inget senyum kamu dan ngerasa bersyukur banget punya kamu di sampingku.',
+    personalNote: 'Lagu spesial kita dari Andmesh. Tiap dengerin lagu ini, aku langsung inget senyum kamu dan ngerasa bersyukur banget punya kamu di sampingku.',
   },
   {
     id: 'track-2',

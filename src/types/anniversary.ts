@@ -77,6 +77,9 @@ export interface MusicTrack {
   artist: string;
   src?: string;
   notes?: string;
+  youtubeId?: string;
+  duration?: string;
+  personalNote?: string;
 }
 
 export interface AnniversaryData {

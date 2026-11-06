@@ -69,7 +69,7 @@ test('Tier 4 - Real-World Romantic Journey: Full User Journey Simulation', async
     // ========================================================================
     assert.strictEqual(musicTracks.length, 4, 'Must have exactly 4 romantic tracks');
     const initialTrack = musicTracks[0];
-    assert.strictEqual(initialTrack.title, 'Until I Found You');
+    assert.strictEqual(initialTrack.title, 'Anugerah Terindah');
 
     // Start background procedural music
     const audioActive = await startRomanticChords(0.7);
