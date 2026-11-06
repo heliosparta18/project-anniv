@@ -39,13 +39,14 @@ The test suite operates purely **opaque-box** and without modifying application 
 | **Tier 1: Feature 13** | Perforated Relationship Voucher Book (Coupon render, perforated dashed border, redeem action, visual stamped state, localStorage persistence) | `tests/tier1_features/f13_relationship_vouchers.test.js` | 5 | 5 | 0 |
 | **Tier 1: Feature 14** | Our Bucket List & Future Dreams (Checklist items, heart checkbox toggle, progress percentage math, confetti trigger at 100%, localStorage persistence) | `tests/tier1_features/f14_bucket_list.test.js` | 5 | 5 | 0 |
 | **Tier 2: Boundaries** | Boundary & Corner Cases (Empty assets, invalid date strings, Feb 29 leap years, 5000-char max string length, offline operation, autoplay blocked audio) | `tests/tier2_boundaries/boundary_corner_cases.test.js` | 6 | 6 | 0 |
+| **Tier 2: Adversarial M4** | Adversarial 3D Envelope & Reasons Deck Stress (rapid flip stress, wax seal accessibility, 10,000 steps math invariant) | `tests/tier2_boundaries/adversarial_m4_envelope_reasons.test.js` | 8 | 8 | 0 |
 | **Tier 3: Interactions** | Cross-Feature Interactions (Audio uninterrupted during timeline scroll, coupon redemption persisting across reload, love letter + music, filter + lightbox, storage isolation) | `tests/tier3_interactions/cross_feature_interactions.test.js` | 5 | 5 | 0 |
 | **Tier 4: Workloads** | Real-World Workload Scenarios (Full romantic user journey: Hero -> Counter -> Audio -> Timeline -> Polaroid Flip -> Lightbox -> Love Letter -> Reasons -> Voucher -> Bucket List -> Reload) | `tests/tier4_workloads/romantic_journey_e2e.test.js` | 1 | 1 | 0 |
 | **Static Integrity** | Static Build & Asset Integrity (index.html, font links, favicon, relative asset path safety) | `tests/static_integrity/asset_integrity.test.js` | 3 | 3 | 0 |
 | **Responsive Invariants** | Multi-Viewport Invariants (320px, 375px, 414px, 768px, 1024px, 1440px coverage, root overflow-x-clip, fluid typography, responsive grid columns) | `tests/static_integrity/responsive_invariants.test.js` | 4 | 4 | 0 |
 | **WCAG AA Contrast** | Color Contrast Audit (Body text >7:1 AAA, rose wine on linen AA, white on rose wine AA, focus indicators >=3:1) | `tests/static_integrity/wcag_contrast.test.js` | 4 | 4 | 0 |
 | **Touch Targets** | Touch Target Audit (WCAG 2.5.5 >=44x44px minimum for primary buttons, icon buttons, checkboxes, wax seal) | `tests/static_integrity/touch_targets.test.js` | 4 | 4 | 0 |
-| **TOTAL** | **Comprehensive Opaque-Box Suite** | **21 files** | **112+** | **112+** | **0** |
+| **TOTAL** | **Comprehensive Opaque-Box Suite** | **22 files** | **89** | **89** | **0** |
 
 ---
 
