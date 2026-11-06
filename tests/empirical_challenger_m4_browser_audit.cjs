@@ -269,7 +269,6 @@ async function main() {
       const overflow = await cdp.eval(`
         (() => {
           const docEl = document.documentElement;
-          const rootEl = document.getElementById('root');
           const couponEl = document.getElementById('coupons');
           return {
             scrollWidth: docEl.scrollWidth,
@@ -353,8 +352,13 @@ async function main() {
     await cdp.eval(`
       (() => {
         const cards = document.querySelectorAll('#coupons .grid > div');
-        // card 1 and card 2
         cards[1].querySelector('button').click();
+      })()
+    `);
+    await new Promise((r) => setTimeout(r, 150));
+    await cdp.eval(`
+      (() => {
+        const cards = document.querySelectorAll('#coupons .grid > div');
         cards[2].querySelector('button').click();
       })()
     `);
@@ -363,11 +367,9 @@ async function main() {
     const afterRedeem3 = await cdp.eval(`
       (() => {
         const saved = JSON.parse(localStorage.getItem('anniv_redeemed_coupons') || '[]');
-        const tabs = Array.from(document.querySelectorAll('#coupons button[role="tab"]')).map(t => t.textContent.trim());
         const resetBtn = Array.from(document.querySelectorAll('#coupons button')).find(b => b.textContent.includes('Reset Voucher'));
         return {
           savedCount: saved.length,
-          tabs,
           hasResetBtn: !!resetBtn,
           resetBtnText: resetBtn ? resetBtn.textContent.trim() : ''
         };
@@ -449,18 +451,21 @@ async function main() {
     check(afterUndo === 2, `Undoing redemption updates state & storage to 2 redeemed coupons`);
 
     // 2.7 Redeem all 8 coupons
-    await cdp.eval(`
-      (() => {
-        const cards = Array.from(document.querySelectorAll('#coupons .grid > div'));
-        cards.forEach(card => {
-          const btn = card.querySelector('button');
-          if (btn && btn.textContent.includes('Tukarkan')) {
-            btn.click();
+    for (let cIdx = 0; cIdx < 8; cIdx++) {
+      await cdp.eval(`
+        (() => {
+          const cards = Array.from(document.querySelectorAll('#coupons .grid > div'));
+          const unredeemedCard = cards.find(c => !c.querySelector('.select-none'));
+          if (unredeemedCard) {
+            const btn = unredeemedCard.querySelector('button');
+            if (btn && btn.textContent.includes('Tukarkan')) {
+              btn.click();
+            }
           }
-        });
-      })()
-    `);
-    await new Promise((r) => setTimeout(r, 200));
+        })()
+      `);
+      await new Promise((r) => setTimeout(r, 100));
+    }
 
     const allRedeemedCount = await cdp.eval(`
       (() => {
@@ -505,23 +510,22 @@ async function main() {
     const bucketItemsCount = await cdp.eval(`document.querySelectorAll('#bucket-list [role="checkbox"]').length`);
     check(bucketItemsCount === 8, `Renders all 8 bucket list dream checkboxes (got ${bucketItemsCount})`);
 
-    // 3.1 Uncheck all to test 0% progress baseline
-    await cdp.eval(`
-      (() => {
-        const checkboxes = Array.from(document.querySelectorAll('#bucket-list [role="checkbox"]'));
-        checkboxes.forEach(cb => {
-          if (cb.getAttribute('aria-checked') === 'true') {
-            cb.click();
-          }
-        });
-      })()
-    `);
-    await new Promise((r) => setTimeout(r, 200));
+    // 3.1 Uncheck all items one-by-one (with re-render intervals) to test 0% progress baseline
+    for (let i = 0; i < 8; i++) {
+      await cdp.eval(`
+        (() => {
+          const checked = document.querySelector('#bucket-list [role="checkbox"][aria-checked="true"]');
+          if (checked) checked.click();
+        })()
+      `);
+      await new Promise((r) => setTimeout(r, 100));
+    }
 
     const progress0 = await cdp.eval(`
       (() => {
         const pbar = document.querySelector('#bucket-list [role="progressbar"]');
-        const pctEl = document.querySelector('#bucket-list h3 + div span, #bucket-list .font-serif.text-3xl');
+        const pcard = pbar.closest('div.bg-anniv-card');
+        const pctEl = pcard.querySelector('span.text-anniv-rose');
         return {
           ariaValueNow: pbar.getAttribute('aria-valuenow'),
           pctText: pctEl ? pctEl.textContent.trim() : ''
@@ -529,24 +533,25 @@ async function main() {
       })()
     `);
     check(progress0.ariaValueNow === '0', `Dynamic progress bar reports 0% aria-valuenow (got ${progress0.ariaValueNow})`);
-    check(progress0.pctText.includes('0%'), `Progress percentage text displays "0%" (got ${progress0.pctText})`);
+    check(progress0.pctText === '0%', `Progress percentage text displays "0%" (got ${progress0.pctText})`);
 
-    // 3.2 Toggle 4 items (50% progress)
-    await cdp.eval(`
-      (() => {
-        const checkboxes = Array.from(document.querySelectorAll('#bucket-list [role="checkbox"]'));
-        for (let i = 0; i < 4; i++) {
-          checkboxes[i].click();
-        }
-      })()
-    `);
-    await new Promise((r) => setTimeout(r, 200));
+    // 3.2 Toggle 4 items one-by-one (50% progress)
+    for (let i = 0; i < 4; i++) {
+      await cdp.eval(`
+        (() => {
+          const unchecked = document.querySelectorAll('#bucket-list [role="checkbox"][aria-checked="false"]');
+          if (unchecked.length > 0) unchecked[0].click();
+        })()
+      `);
+      await new Promise((r) => setTimeout(r, 100));
+    }
 
     const progress50 = await cdp.eval(`
       (() => {
         const pbar = document.querySelector('#bucket-list [role="progressbar"]');
-        const textBanner = document.querySelector('#bucket-list h3');
-        const pctEl = document.querySelector('#bucket-list .font-serif.text-3xl, #bucket-list .font-serif.text-4xl');
+        const pcard = pbar.closest('div.bg-anniv-card');
+        const textBanner = pcard.querySelector('h3');
+        const pctEl = pcard.querySelector('span.text-anniv-rose');
         const saved = JSON.parse(localStorage.getItem('anniv_bucket_list_completed') || '[]');
         return {
           ariaValueNow: pbar.getAttribute('aria-valuenow'),
@@ -558,7 +563,7 @@ async function main() {
     `);
     check(progress50.ariaValueNow === '50', `Progress bar reports 50% aria-valuenow (got ${progress50.ariaValueNow})`);
     check(progress50.bannerText.includes('4 of 8 dreams accomplished'), `Banner announces "4 of 8 dreams accomplished"`);
-    check(progress50.pctText.includes('50%'), `Progress displays "50%"`);
+    check(progress50.pctText === '50%', `Progress displays "50%" (got ${progress50.pctText})`);
     check(progress50.savedCount === 4, 'LocalStorage persisted exactly 4 completed IDs');
 
     // 3.3 Reload test for bucket list persistence
@@ -583,24 +588,24 @@ async function main() {
     check(reloadedBucket.checkedCount === 4, 'DOM renders 4 checked heart checkboxes after reload');
 
     // 3.4 Complete all 8 items (100% progress & Grand Confetti celebration)
-    await cdp.eval(`
-      (() => {
-        const checkboxes = Array.from(document.querySelectorAll('#bucket-list [role="checkbox"]'));
-        checkboxes.forEach(cb => {
-          if (cb.getAttribute('aria-checked') !== 'true') {
-            cb.click();
-          }
-        });
-      })()
-    `);
-    await new Promise((r) => setTimeout(r, 600));
+    for (let i = 0; i < 4; i++) {
+      await cdp.eval(`
+        (() => {
+          const unchecked = document.querySelectorAll('#bucket-list [role="checkbox"][aria-checked="false"]');
+          if (unchecked.length > 0) unchecked[0].click();
+        })()
+      `);
+      await new Promise((r) => setTimeout(r, 100));
+    }
+    await new Promise((r) => setTimeout(r, 500)); // wait for grand celebration timeout
 
     const progress100 = await cdp.eval(`
       (() => {
         const pbar = document.querySelector('#bucket-list [role="progressbar"]');
-        const textBanner = document.querySelector('#bucket-list h3');
-        const pctEl = document.querySelector('#bucket-list .font-serif.text-3xl, #bucket-list .font-serif.text-4xl');
-        const celebratoryText = document.querySelector('#bucket-list .italic.text-anniv-rose');
+        const pcard = pbar.closest('div.bg-anniv-card');
+        const textBanner = pcard.querySelector('h3');
+        const pctEl = pcard.querySelector('span.text-anniv-rose');
+        const celebratoryText = pcard.querySelector('.italic.text-anniv-rose');
         return {
           ariaValueNow: pbar.getAttribute('aria-valuenow'),
           bannerText: textBanner ? textBanner.textContent.trim() : '',
@@ -611,7 +616,11 @@ async function main() {
     `);
     check(progress100.ariaValueNow === '100', '100% progress achieved');
     check(progress100.bannerText.includes('8 of 8 dreams accomplished'), 'Banner announces 8 of 8 dreams accomplished');
-    check(progress100.celebratoryText.length > 0, `Grand completion celebration message renders: "${progress100.celebratoryText.slice(0, 45)}..."`);
+    check(progress100.pctText === '100%', 'Progress displays "100%"');
+    check(
+      progress100.celebratoryText.includes('Semua impian di daftar ini sudah terwujud'),
+      `Grand completion celebration message renders: "${progress100.celebratoryText.slice(0, 45)}..."`
+    );
 
     // 3.5 Test with reduced motion preference
     console.log('[CDP] Testing Bucket List toggle with prefers-reduced-motion: reduce...');
@@ -625,7 +634,13 @@ async function main() {
       (() => {
         const cb = document.querySelectorAll('#bucket-list [role="checkbox"]')[0];
         cb.click();
-        setTimeout(() => cb.click(), 100);
+      })()
+    `);
+    await new Promise((r) => setTimeout(r, 200));
+    await cdp.eval(`
+      (() => {
+        const cb = document.querySelectorAll('#bucket-list [role="checkbox"]')[0];
+        cb.click();
       })()
     `);
     await new Promise((r) => setTimeout(r, 400));
@@ -702,7 +717,7 @@ async function main() {
       console.error('Exceptions:', cdp.exceptions);
     }
 
-    // Save summary results to JSON for transparent artifact auditing
+    // Save summary results to JSON
     const resultsPayload = {
       timestamp: new Date().toISOString(),
       passCount,

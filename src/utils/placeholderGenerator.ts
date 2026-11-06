@@ -251,7 +251,7 @@ export const DEFAULT_PLACEHOLDERS: Record<string, SvgPlaceholderOptions> = {
 
 export function getPlaceholderPhoto(idOrPath: string): string {
   // Extract key
-  const match = idOrPath.match(/(milestone-\d|polaroid-\d)/i);
+  const match = (idOrPath || '').match(/(milestone-\d|polaroid-\d)/i);
   const key = match ? match[1].toLowerCase() : 'polaroid-1';
   const opts = DEFAULT_PLACEHOLDERS[key] || DEFAULT_PLACEHOLDERS['polaroid-1'];
   return generateSvgDataUrl(opts);
